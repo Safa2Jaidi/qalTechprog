@@ -37,4 +37,12 @@ header img{
 
 #imo1 {
     width: 100%;
+    margin-top: 1px;
+}
+marquee{
+    
+    color: rgb(79, 11, 143);
+    text-align: center;
+    font-size: 30px;
+    font-family: "Tajawal", sans-serif;
 }
