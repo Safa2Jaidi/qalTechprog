@@ -57,4 +57,9 @@ aside button{
     border-left: 1px solid black;
     border-bottom: 1px solid black;
     border-top: 1px solid black;
+    outline: none;
+}
+aside button:hover{
+    color: white;
+    background-color: #ff4b5c;
 }
