@@ -43,4 +43,6 @@ aside{
     width: 13%;
     height: 400px;
     background: red;
+    float: right;
+    
 }
