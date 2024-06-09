@@ -70,15 +70,21 @@ main{
     height: 400px;
     background: #d9e0e2;
     margin-top: -5px;
+    float: left;
 }
 main h2{
     font-size: 35px;
     font-weight: bold;
     font-family: "Tajawal", sans-serif;
+    margin-top: 10px;
+}
+main img{
+    width: 150px;
+    margin-top: 10px;
 }
 main p{
     font-size: 25px;
     font-weight: bold;
     font-family: "Tajawal", sans-serif;
-    margin-top: 20px;
+    margin-top: 10px;
 }
