@@ -65,3 +65,9 @@ aside button:hover{
     color: white;
     background-color: #4562ef;
 }
+main{
+    width: 87%;
+    height: 400px;
+    background: gray;
+    margin-top: -5px;
+}
