@@ -42,7 +42,7 @@ header img{
 aside{
     width: 13%;
     height: 400px;
-    background: black;
+    background: white;
     float: right;
 }
 aside button{
@@ -50,5 +50,11 @@ aside button{
     height: 50px;
     font-size: 18px;
     font-family: "Tajawal", sans-serif;
-
+    font-weight: bold;
+    background: none;
+    border: none;
+    border-bottom: 1px solid black;
+    border-left: 1px solid black;
+    border-bottom: 1px solid black;
+    border-top: 1px solid black;
 }
