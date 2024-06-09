@@ -88,3 +88,17 @@ main p{
     font-family: "Tajawal", sans-serif;
     margin-top: 10px;
 }
+#d1 div{
+    width:270px;
+    height:330px;
+    border: 1px bold white;
+    font-size: 18px;
+    font-family: "Tajawal", sans-serif;
+    box-shadow: 1px 1px 12px gray;
+    float: left;
+    margin-left: 114px;
+    margin-top: 40px;
+    border-radius: 12px;
+    margin-bottom: 40px;
+
+}
