@@ -23,7 +23,7 @@ header button{
     
 }
 header button:hover{
-    color: #07689f;
+    color: #4562ef;
     box-shadow: 0px 0px 15px silver;
 
 }
@@ -59,9 +59,9 @@ aside button{
     border-bottom: 1px solid #535254;
     border-top: 1px solid #535254;
     outline: none;
+    transition: 1s;
 }
 aside button:hover{
     color: white;
     background-color: #4562ef;
-    transition: 1s;
 }
