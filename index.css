@@ -42,8 +42,9 @@ header img{
 aside{
     width: 13%;
     height: 400px;
-    background: white;
+    background: #bcccfd;
     float: right;
+    margin-top: -5px;
 }
 aside button{
     width: 100%;
@@ -53,13 +54,14 @@ aside button{
     font-weight: bold;
     background: none;
     border: none;
-    border-bottom: 1px solid black;
-    border-left: 1px solid black;
-    border-bottom: 1px solid black;
-    border-top: 1px solid black;
+    border-bottom: 1px solid #535254;
+    border-left: 1px solid #535254;
+    border-bottom: 1px solid #535254;
+    border-top: 1px solid #535254;
     outline: none;
 }
 aside button:hover{
     color: white;
-    background-color: #ff4b5c;
+    background-color: #4562ef;
+    transition: 1s;
 }
