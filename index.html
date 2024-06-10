@@ -4,7 +4,17 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  <title>التكنولوجيا والبرمجة/قلقيلية qTp</title>
+  <title>شريط التنقل</title>
+  <style>
+    /* تأكد من أن النص يظهر في الوسط عندما يكون في وضع التجميع */
+    .navbar-nav .nav-link {
+      text-align: right;
+    }
+    /* تعديلات للقائمة المنسدلة لتظهر النصوص من اليمين */
+    .dropdown-menu {
+      text-align: right;
+    }
+  </style>
 </head>
 <body>
 
@@ -17,58 +27,60 @@
       <li class="nav-item active">
         <a class="nav-link" href="#">الرئيسية <span class="sr-only">(current)</span></a>
       </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          النمذجة
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink1">
-          <a class="dropdown-item" href="#">رابط 1</a>
-          <a class="dropdown-item" href="#">رابط 2</a>
-          <a class="dropdown-item" href="#">رابط 3</a>
-        </div>
-      </li>
-      <!-- قم بتكرار الكود التالي لإضافة المزيد من القوائم -->
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          الإلكترونيات
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink2">
-          <a class="dropdown-item" href="#">رابط 1</a>
-          <a class="dropdown-item" href="#">رابط 2</a>
-          <a class="dropdown-item" href="#">رابط 3</a>
-        </div>
-      </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-         البرمجة
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink2">
-          <a class="dropdown-item" href="#">رابط 1</a>
-          <a class="dropdown-item" href="#">رابط 2</a>
-          <a class="dropdown-item" href="#">رابط 3</a>
-        </div>
-      </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          المحاكاة
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink2">
-          <a class="dropdown-item" href="#">رابط 1</a>
-          <a class="dropdown-item" href="#">رابط 2</a>
-          <a class="dropdown-item" href="#">رابط 3</a>
-        </div>
-      </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-         إناث الشرعية
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink2">
-          <a class="dropdown-item" href="#">رابط 1</a>
-          <a class="dropdown-item" href="#">رابط 2</a>
-          <a class="dropdown-item" href="#">رابط 3</a>
-        </div>
-      </li>
-      <!-- استمر في إضافة القوائم حتى تصل إلى القائمة 5 -->
+    </li>
+    <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        النمذجة
+      </a>
+      <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink1">
+        <a class="dropdown-item" href="#">رابط 1</a>
+        <a class="dropdown-item" href="#">رابط 2</a>
+        <a class="dropdown-item" href="#">رابط 3</a>
+      </div>
+    </li>
+    <!-- قم بتكرار الكود التالي لإضافة المزيد من القوائم -->
+    <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        الإلكترونيات
+      </a>
+      <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink2">
+        <a class="dropdown-item" href="#">رابط 1</a>
+        <a class="dropdown-item" href="#">رابط 2</a>
+        <a class="dropdown-item" href="#">رابط 3</a>
+      </div>
+    </li>
+    <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+       البرمجة
+      </a>
+      <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink2">
+        <a class="dropdown-item" href="#">رابط 1</a>
+        <a class="dropdown-item" href="#">رابط 2</a>
+        <a class="dropdown-item" href="#">رابط 3</a>
+      </div>
+    </li>
+    <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        المحاكاة
+      </a>
+      <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink2">
+        <a class="dropdown-item" href="#">رابط 1</a>
+        <a class="dropdown-item" href="#">رابط 2</a>
+        <a class="dropdown-item" href="#">رابط 3</a>
+      </div>
+    </li>
+    <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+       إناث الشرعية
+      </a>
+      <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink2">
+        <a class="dropdown-item" href="#">رابط 1</a>
+        <a class="dropdown-item" href="#">رابط 2</a>
+        <a class="dropdown-item" href="#">رابط 3</a>
+      </div>
+   
+      <!-- قوائم منسدلة -->
+      <!-- ... -->
     </ul>
   </div>
 </nav>
