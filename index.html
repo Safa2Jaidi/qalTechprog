@@ -3,79 +3,79 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>التكنولوجيا والبرمجة/قلقيلية qTp</title>
-  <link rel="icon" href="logo.png"/>
-  <!-- ربط Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  <style>
-    /* تعديلات CSS لأزرار شريط التنقل */
-    .nav-link {
-      transition: background-color 0.2s; /* تأثير انتقالي للون الخلفية */
-      padding: 7px 20px; /* تحديد الأبعاد */
-      border-radius: 7px; /* تقريب الزوايا */
-    }
-    .nav-link:hover {
-      background-color: #4562ef; /* تغيير لون الخلفية عند مرور المؤشر */
-      color: #ffffff; /* تغيير لون النص إلى الأبيض */
-    }
-    /* تصميم شعار الموقع */
-    .navbar-brand img {
-      height: 40px; /* يمكنك تعديل الحجم حسب الحاجة */
-    }
-    /* تعديل اتجاه النص ليتوافق مع اللغة العربية */
-    .navbar-nav {
-      direction: rtl;
-    }
-    /* تثبيت الشعار على اليسار */
-    .navbar {
-      display: flex;
-      justify-content: space-between;
-    }
-    .navbar-collapse {
-      flex-grow: 0;
-    }
-  </style>
+  <title>التكنولوجيا والبرمجة/قلقيلية qTp</title>
 </head>
 <body>
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
-  <div class="container">
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav mr-auto">
-        <!-- أضف الأزرار هنا -->
-        <li class="nav-item active">
-          <li class="nav-item active">
-            <a class="nav-link" href="#">الرئيسة</a>
-          </li>
-          <a class="nav-link" href="#">النمذجة</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">الإلكترونيات</a>
-        </li>
-        <li class="nav-item active">
-          <a class="nav-link" href="#">البرمجة</a>
-        </li>
-        <li class="nav-item active">
-          <a class="nav-link" href="#">المحاكاة</a>
-        </li>
-        <li class="nav-item active">
-          <a class="nav-link" href="#">إناث الشرعية</a>
-        </li>
-        <!-- ... -->
-      </ul>
-    </div>
-    <a class="navbar-brand" href="#">
-      <img src="icon.png" alt="شعار الموقع"> <!-- تأكد من تغيير مسار الصورة -->
-    </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="تبديل التنقل">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">الرئيسية <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          النمذجة
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink1">
+          <a class="dropdown-item" href="#">رابط 1</a>
+          <a class="dropdown-item" href="#">رابط 2</a>
+          <a class="dropdown-item" href="#">رابط 3</a>
+        </div>
+      </li>
+      <!-- قم بتكرار الكود التالي لإضافة المزيد من القوائم -->
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          الإلكترونيات
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink2">
+          <a class="dropdown-item" href="#">رابط 1</a>
+          <a class="dropdown-item" href="#">رابط 2</a>
+          <a class="dropdown-item" href="#">رابط 3</a>
+        </div>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+         البرمجة
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink2">
+          <a class="dropdown-item" href="#">رابط 1</a>
+          <a class="dropdown-item" href="#">رابط 2</a>
+          <a class="dropdown-item" href="#">رابط 3</a>
+        </div>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          المحاكاة
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink2">
+          <a class="dropdown-item" href="#">رابط 1</a>
+          <a class="dropdown-item" href="#">رابط 2</a>
+          <a class="dropdown-item" href="#">رابط 3</a>
+        </div>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+         إناث الشرعية
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink2">
+          <a class="dropdown-item" href="#">رابط 1</a>
+          <a class="dropdown-item" href="#">رابط 2</a>
+          <a class="dropdown-item" href="#">رابط 3</a>
+        </div>
+      </li>
+      <!-- استمر في إضافة القوائم حتى تصل إلى القائمة 5 -->
+    </ul>
   </div>
 </nav>
 
-<!-- ربط Bootstrap JavaScript والتبعيات -->
+<!-- يمكنك إضافة محتوى الصفحة هنا -->
+
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.9.3/dist/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
