@@ -3,24 +3,36 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>موقعي الإلكتروني</title>
+  <title>التكنولوجيا والبرمجة/قلقيلية qTp</title>
+  <link rel="icon" href="logo.png"/>
   <!-- ربط Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <style>
-    /* إضافة تأثيرات للأزرار */
+    /* تعديلات CSS لأزرار شريط التنقل */
     .nav-link {
-      transition: color 0.2s;
+      transition: background-color 0.2s; /* تأثير انتقالي للون الخلفية */
+      padding: 10px 30px; /* تحديد الأبعاد */
+      border-radius: 10px; /* تقريب الزوايا */
     }
-    .nav-link:hover, .nav-link:active {
-      color: #007bff; /* يمكنك تغيير اللون حسب تفضيلك */
+    .nav-link:hover {
+      background-color: #4562ef; /* تغيير لون الخلفية عند مرور المؤشر */
+      color: #bcccfd; /* تغيير لون النص إلى الأبيض */
     }
     /* تصميم شعار الموقع */
     .navbar-brand img {
-      height: 70px; /* يمكنك تعديل الحجم حسب الحاجة */
+      height: 40px; /* يمكنك تعديل الحجم حسب الحاجة */
     }
     /* تعديل اتجاه النص ليتوافق مع اللغة العربية */
     .navbar-nav {
       direction: rtl;
+    }
+    /* تثبيت الشعار على اليسار */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+    }
+    .navbar-collapse {
+      flex-grow: 0;
     }
   </style>
 </head>
@@ -28,28 +40,25 @@
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
   <div class="container">
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="تبديل التنقل">
-      <span class="navbar-toggler-icon"></span>
-    </button>
     <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
+      <ul class="navbar-nav mr-auto">
         <!-- أضف الأزرار هنا -->
         <li class="nav-item active">
-          <a class="nav-link" href="#">الرئيسة </a>
-        </li>
-        <li class="nav-item">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">الرئيسة</a>
+          </li>
           <a class="nav-link" href="#">النمذجة</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">الإلكترونيات</a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item active">
           <a class="nav-link" href="#">البرمجة</a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item active">
           <a class="nav-link" href="#">المحاكاة</a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item active">
           <a class="nav-link" href="#">إناث الشرعية</a>
         </li>
         <!-- ... -->
@@ -58,6 +67,9 @@
     <a class="navbar-brand" href="#">
       <img src="icon.png" alt="شعار الموقع"> <!-- تأكد من تغيير مسار الصورة -->
     </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="تبديل التنقل">
+      <span class="navbar-toggler-icon"></span>
+    </button>
   </div>
 </nav>
 
