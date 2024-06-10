@@ -59,8 +59,6 @@ aside button{
     border: none;
     border-bottom: 1px solid #535254;
     border-left: 1px solid #535254;
-    border-bottom: 1px solid #535254;
-    border-top: 1px solid #535254;
     outline: none;
     transition: 1s;
 }
@@ -71,9 +69,11 @@ aside button:hover{
 main{
     width: 87%;
     height: 400px;
-    background: #d9e0e2;
-    margin-top: -5px;
+    background: #bcccfd;
+    margin-top: -6px;
     float: left;
+    border-bottom: 1px solid #535254;
+    outline: none;
 }
 main h2{
     font-size: 35px;
@@ -99,7 +99,7 @@ main p{
     font-family: "Tajawal", sans-serif;
     box-shadow: 1px 1px 12px gray;
     float: left;
-    margin-left: 114px;
+    margin-left: 86px;
     margin-top: 40px;
     border-radius: 12px;
     margin-bottom: 40px;
@@ -107,11 +107,11 @@ main p{
 
 footer{
     width:100%;
-    height: 250px;
-    background-color: black;
+    height: 230px;
+    background-color: white;
     margin-top:600px;
     clear:both;
-    box-shadow: 0px 0px 20px gray;
+    box-shadow: 0px 0px 20px black;
 }
 footer div{
     font-size: 16px;
@@ -119,14 +119,16 @@ footer div{
     font-family: "Tajawal", sans-serif;
     font-weight: bold;
     text-align: right;
-    margin-right: 85px;
-    color:red;
+    margin-right: 70px;
+    color: white;
     float: right;
 }
 footer div a{
     text text-decoration: none;
-    color: white;
+    color: black;
+    
 }
 footer div a:hover{
+    color: #4562ef;
 
 }
