@@ -4,67 +4,166 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>التكنولوجيا والبرمجة/قلقيلية</title>
-  <link rel="icon" href="logo.png"/>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 <style>
-  body { text-align: right; }
-  .navbar { background-color: #333; }
-  .navbar-nav { direction: rtl; }
-  .nav-link { color: white; }
-  .dropdown-menu { text-align: right; }
-  @media (max-width: 576px) {
-    .navbar-nav { display: none; }
-    .navbar-toggler { display: block; }
+  body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding-top: 60px; /* لتجنب تغطية شريط التنقل للمحتوى */
+  }
+  .navbar {
+    overflow: hidden;
+    background-color: #333;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+  }
+  .navbar a, .dropbtn {
+    float: right;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  .navbar a:hover, .dropdown:hover .dropbtn {
+    background-color: #ddd;
+    color: black;
+  }
+  .navbar a.active {
+    background-color: #4CAF50;
+    color: white;
+  }
+  .navbar .icon {
+    display: none;
+  }
+  .dropdown {
+    float: right;
+    overflow: hidden;
+  }
+  .dropdown .dropbtn {
+    cursor: pointer;
+    font-size: 16px;    
+    border: none;
+    outline: none;
+    color: white;
+    padding: 14px 16px;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+  }
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  .dropdown-content a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: right;
+  }
+  .dropdown-content a:hover {
+    background-color: #ddd;
+  }
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  @media screen and (max-width: 600px) {
+    .navbar a:not(:first-child), .dropdown .dropbtn, .dropdown-content a {
+      display: none;
+    }
+    .navbar a.icon {
+      float: right;
+      display: block;
+    }
+    .navbar.responsive {position: relative;}
+    .navbar.responsive .icon {
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+    .navbar.responsive a {
+      float: none;
+      display: block;
+      text-align: right;
+    }
+    .navbar.responsive .dropdown {float: none;}
+    .navbar.responsive .dropdown-content {position: relative;}
+    .navbar.responsive .dropdown .dropbtn {
+      display: block;
+      width: 100%;
+      text-align: right;
+    }
   }
 </style>
 </head>
 <body>
 
-<nav class="navbar navbar-expand-lg fixed-top">
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarNavDropdown">
-    <ul class="navbar-nav">
-      <li class="nav-item active">
-        <a class="nav-link" href="#">الرئيسية</a>
-      </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          قائمة 1
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" href="#">رابط 1</a>
-          <a class="dropdown-item" href="#">رابط 2</a>
-          <a class="dropdown-item" href="#">رابط 3</a>
-        </div>
-      </li>
-      <!-- يمكنك إضافة المزيد من القوائم هنا -->
-    </ul>
-  </div>
-</nav>
+<div class="navbar" id="myNavbar">
+  <a href="#home" class="active">الرئيسية</a>
+  <div class="dropdown">
+    <button class="dropbtn">قائمة 1 
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="#">رابط 1</a>
+      <a href="#">رابط 2</a>
+      <a href="#">رابط 3</a>
+    </div>
+  </div> 
+  <div class="dropdown">
+    <button class="dropbtn">قائمة 2 
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="#">رابط 1</a>
+      <a href="#">رابط 2</a>
+      <a href="#">رابط 3</a>
+    </div>
+  </div> 
+  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+    ☰
+  </a>
+</div>
 
-<div class="container mt-5 pt-5">
+<div style="padding:20px;background-color:#1abc9c;">
   <h2>نموذج التعليقات</h2>
-  <form action="result.html" method="post">
-    <div class="form-group">
-      <label for="name">الاسم:</label>
-      <input type="text" class="form-control" id="name" name="name" required>
-    </div>
-    <div class="form-group">
-      <label for="comment">التعليق:</label>
-      <textarea class="form-control" id="comment" name="comment" required></textarea>
-    </div>
-    <button type="submit" class="btn btn-primary">موافق</button>
+  <form action="/submit-comment" method="get">
+    <label for="name">الاسم:</label>
+    <input type="text" id="name" name="name"><br><br>
+    <label for="comment">التعليق:</label>
+    <textarea id="comment" name="comment" style="height:200px"></textarea><br><br>
+    <input type="submit" value="موافق">
   </form>
 </div>
 
-<footer class="text-center mt-4">
-  <p>التكنولوجيا والبرمجة/قلقيلية © 2024</p>
-</footer>
+<div style="position:fixed;bottom:0;width:100%;background-color:#333;color:white;text-align:center;padding:10px;">
+  © التكنولوجيا والبرمجة/قلقيلية
+</div>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script>
+function myFunction() {
+  var x = document.getElementById("myNavbar");
+  if (x.className === "navbar") {
+    x.className += " responsive";
+  } else {
+    x.className = "navbar";
+  }
+}
+// JavaScript to handle the form submission without a database
+document.querySelector('form').onsubmit = function(e) {
+  e.preventDefault();
+  var name = document.getElementById('name').value;
+  var comment = document.getElementById('comment').value;
+  alert('الاسم: ' + name + '\nالتعليق: ' + comment);
+};
+</script>
+
 </body>
 </html>
