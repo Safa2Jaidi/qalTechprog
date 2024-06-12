@@ -9,7 +9,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // ...
 
         // توجيه المستخدم إلى صفحة الشكر مع معلومات الاسم والتعليق
-        header('Location: thankyou.php?name=' . urlencode($name) . '&comment=' . urlencode($comment));
+        header('Location: https://safa2jaidi.github.io/qalTechprog/thankyou.php?name=' . urlencode($name) . '&comment=' . urlencode($comment));
         exit();
     } else {
         // إذا لم يتم إرسال الاسم أو التعليق، أعد المستخدم إلى النموذج

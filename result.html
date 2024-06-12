@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>نتائج التعليق</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f7f7f7;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            direction: rtl;
+        }
+        .result-box {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            max-width: 300px;
+            text-align: right;
+            margin: 15px;
+        }
+        .thank-you-message {
+            color: #5cb85c;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        @media (max-width: 768px) {
+            .result-box {
+                width: 90%;
+                margin-top: 0;
+            }
+        }
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .result-box {
+                width: 70%;
+            }
+        }
+        @media (min-width: 1025px) {
+            .result-box {
+                width: 50%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="result-box">
+        <div class="thank-you-message">شكراً لك، <span id="displayName"></span>!</div>
+        <div id="displayComment"></div>
+    </div>
+    <script>
+        // استرجاع البيانات من sessionStorage وعرضها
+        document.getElementById('displayName').textContent = sessionStorage.getItem('name');
+        document.getElementById('displayComment').textContent = 'التعليق: ' + sessionStorage.getItem('comment');
+    </script>
+</body>
+</html>
