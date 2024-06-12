@@ -5,12 +5,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>التكنولوجيا والبرمجة/قلقيلية</title>
 <link rel="icon" href="logo.png"/>
+<link href="https://fonts.googleapis.com/css?family=Sakkal+Majalla&display=swap" rel="stylesheet">
 <style>
   body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Sakkal Majalla', sans-serif;
+    font-size: large;
     margin: 0;
     padding-top: 60px; /* لتجنب تغطية شريط التنقل للمحتوى */
+    text-align: right; /* لتوسيط المحتوى */
   }
+  /* ... الأنماط السابقة لشريط التنقل ... */
   .navbar {
     overflow: hidden;
     background-color: #333;
@@ -32,7 +36,7 @@
     color: black;
   }
   .navbar a.active {
-    background-color: #333;
+    background-color: #343a40;
     color: white;
   }
   .navbar .icon {
@@ -102,50 +106,80 @@
       text-align: right;
     }
   }
+  .form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh; /* استخدام ارتفاع الشاشة لتوسيط النموذج */
+  }
+  form {
+    width: 100%;
+    max-width: 400px; /* تحديد أقصى عرض للنموذج */
+  }
+  input[type="text"], textarea {
+    width: 100%; /* جعل حقول الإدخال تمتد لكامل العرض */
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    box-sizing: border-box; /* لتجنب تجاوز حقول الإدخال للعرض المحدد */
+  }
+  input[type="submit"] {
+    background-color: #343a40;
+    color: white;
+    padding: 14px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  input[type="submit"]:hover {
+    background-color: #45a049;
+  }
 </style>
 </head>
 <body>
 
 <div class="navbar" id="myNavbar">
-  <a href="index.html" class="active">الرئيسية</a>
-  <div class="dropdown">
-    <button class="dropbtn">النمذجة
-      <i class="fa fa-caret-down"></i>
-    </button>
-    <div class="dropdown-content">
-      <a href="#">رابط 1</a>
-      <a href="#">رابط 2</a>
-      <a href="#">رابط 3</a>
-    </div>
-  </div> 
-  <div class="dropdown">
-    <button class="dropbtn">الإلكترونيات 
-      <i class="fa fa-caret-down"></i>
-    </button>
-    <div class="dropdown-content">
-      <a href="#">رابط 1</a>
-      <a href="#">رابط 2</a>
-      <a href="#">رابط 3</a>
-    </div>
-  </div> 
-  <div class="dropdown">
-    <button class="dropbtn">البرمجة 
-      <i class="fa fa-caret-down"></i>
-    </button>
-    <div class="dropdown-content">
-      <a href="#">رابط 1</a>
-      <a href="#">رابط 2</a>
-      <a href="#">رابط 3</a>
-    </div>
-  </div> 
-  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-    ☰
-  </a>
+  <!-- ... شريط التنقل كما هو ... -->
+  <div class="navbar" id="myNavbar">
+    <a href="index.html" class="active">الرئيسية</a>
+    <div class="dropdown">
+      <button class="dropbtn">النمذجة
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="dropdown-content">
+        <a href="#">رابط 1</a>
+        <a href="#">رابط 2</a>
+        <a href="#">رابط 3</a>
+      </div>
+    </div> 
+    <div class="dropdown">
+      <button class="dropbtn">الإلكترونيات 
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="dropdown-content">
+        <a href="#">رابط 1</a>
+        <a href="#">رابط 2</a>
+        <a href="#">رابط 3</a>
+      </div>
+    </div> 
+    <div class="dropdown">
+      <button class="dropbtn">البرمجة 
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="dropdown-content">
+        <a href="#">رابط 1</a>
+        <a href="#">رابط 2</a>
+        <a href="#">رابط 3</a>
+      </div>
+    </div> 
+    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+      ☰
+    </a>
+  </div>
 </div>
 
-<div style="padding:20px;background-color:#385e55;">
-  <h2>نموذج التعليقات</h2>
-  <form action="/submit-comment" method="get">
+<div class="form-container">
+  <form action="result.html" method="get">
     <label for="name">الاسم:</label>
     <input type="text" id="name" name="name"><br><br>
     <label for="comment">التعليق:</label>
@@ -155,10 +189,9 @@
 </div>
 
 <div style="position:fixed;bottom:0;width:100%;background-color:#333;color:white;text-align:center;padding:10px;">
-  © التكنولوجيا والبرمجة/قلقيلية
+  © جميع الحقوق محفوظة
 </div>
-
-<script>
+  <script>
 function myFunction() {
   var x = document.getElementById("myNavbar");
   if (x.className === "navbar") {
@@ -175,6 +208,7 @@ document.querySelector('form').onsubmit = function(e) {
   alert('الاسم: ' + name + '\nالتعليق: ' + comment);
 };
 </script>
+
 
 </body>
 </html>
