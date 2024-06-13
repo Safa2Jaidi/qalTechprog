@@ -21,7 +21,8 @@
     right: 10px; /* يبتعد عن يمين الصفحة بـ 5 بيكسل */
     width: 100px; /* طول الزر 100 بيكسل */
     height: 50px; /* ارتفاع الزر 50 بيكسل */
-    border: none; /* إزالة الحدود */
+    border-style: solid; 
+    border-color: #f6bc00;
     border-radius: 25px; /* جعل الحواف دائرية */
     background-color: #385e55; /* لون الخلفية الافتراضي */
     color: white; /* لون النص الافتراضي */
@@ -34,20 +35,21 @@
 
 
   .logo {
-    position: fixed;
+    width: 100px; /* عرض الصورة*/
+    height: 100px;/* ارتفاع الصورة*/
+    transition: top 2s ease-in-out; /* تأثير انتقالي للصورة*/
+    position: fixed;/* الصورة ثابتة في مكان محدد*/
     top: -100px; /* بداية خارج الشاشة */
     left: 10px; /* تبتعد عن الحافة اليسرى للصفحة بمقدار 10 بكسل */
-    width: 100px;
-    height: 100px;
-    background-image: url('Shar3iaGirlsSchool.png'); /* استبدل بمسار صورتك */
-    background-size: cover;
+    background-size: cover; /* تغطية المساحة المحددة بالصورة */
     z-index: 9999; /* زيادة القيمة لتظهر فوق الجميع */
-    transition: top 1s ease-in-out;
+    background-image: url('Shar3iaGirlsSchool.png'); /* استبدل بمسار صورتك */
   }
   .logo:hover {
-    animation: shake 2s ease-in-out infinite; /* مدة أطول وتواتر أبطأ للحركة */
+    animation: shake 2s ease-in-out infinite; /* تأثير اهتزاز عند تمرير الماوس */
   }
   @keyframes shake {
+    /* تعريف حركات الاهتزاز */
     0% { transform: translate(1px, 1px) rotate(0deg); }
     10% { transform: translate(-1px, -2px) rotate(-1deg); }
     20% { transform: translate(-3px, 0px) rotate(1deg); }
@@ -171,6 +173,19 @@
     background-color: #343a40;
     height: 100px;
   }
+
+  /* تحديد خصائص النص لعبارة الحقوق المحفوظة */
+.copyright {
+  position: absolute; /* استخدام الوضعية المطلقة للتحكم بموقع العنصر */
+  top: 600px; /* تحديد المسافة من الحافة العلوية للصفحة */
+  left: 50%; /* تحديد الموقع الأفقي للعنصر */
+  transform: translateX(-50%); /* تحريك العنصر للوسط بالنسبة لموقعه الأفقي */
+  color: white; /* تحديد لون النص بالأبيض */
+  font-size: 16px; /* تحديد حجم النص */
+  font-family: 'Simplified Arabic', sans-serif; /* تحديد نوع الخط */
+}
+
+
 </style>
 </head>
 <body>
@@ -195,6 +210,9 @@
   });
 </script>
 </body>
+<div class="copyright">
+  © التكنولوجيا والبرمجة/قلقيلية
+</div>
 </html>
 
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
