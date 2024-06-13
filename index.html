@@ -31,6 +31,35 @@
   .my-button:hover {
     background-color: #343a40; /* تغيير لون الخلفية عند المرور بالماوس */
   }
+
+
+  .logo {
+    position: fixed;
+    top: -200px; /* بداية خارج الشاشة */
+    left: 10px; /* تبتعد عن الحافة اليسرى للصفحة بمقدار 10 بكسل */
+    width: 200px;
+    height: 200px;
+    background-image: url('Shar3iaGirlsSchool.png'); /* استبدل بمسار صورتك */
+    background-size: cover;
+    z-index: 9999; /* زيادة القيمة لتظهر فوق الجميع */
+    transition: top 0.5s ease-in-out;
+  }
+  .logo:hover {
+    animation: shake 1s ease-in-out infinite; /* مدة أطول وتواتر أبطأ للحركة */
+  }
+  @keyframes shake {
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+    10% { transform: translate(-1px, -2px) rotate(-1deg); }
+    20% { transform: translate(-3px, 0px) rotate(1deg); }
+    30% { transform: translate(3px, 2px) rotate(0deg); }
+    40% { transform: translate(1px, -1px) rotate(1deg); }
+    50% { transform: translate(-1px, 2px) rotate(-1deg); }
+    60% { transform: translate(-3px, 1px) rotate(0deg); }
+    70% { transform: translate(3px, 1px) rotate(-1deg); }
+    80% { transform: translate(-1px, -1px) rotate(1deg); }
+    90% { transform: translate(1px, 2px) rotate(0deg); }
+    100% { transform: translate(1px, -2px) rotate(-1deg); }
+  }
   </style>
 
 </head>
@@ -152,6 +181,19 @@
   </div>
   <div class="green-section"></div>
   <div class="footer"></div>
+
+  <div class="logo"></div>
+
+<!-- أضف هذا القسم قبل إغلاق الـ </body> في صفحتك -->
+<script>
+  window.onload = function() {
+    document.querySelector('.logo').style.top = '0px'; /* تدخل الصورة بسلاسة */
+  };
+
+  document.querySelector('.logo').addEventListener('click', function() {
+    window.location.href = 'http://example.com'; /* استبدل بالرابط الذي تريده */
+  });
+</script>
 </body>
 </html>
 
