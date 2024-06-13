@@ -15,9 +15,30 @@
     .dropdown-menu {
       text-align: right;
     }
+    .my-button {
+    position: fixed;
+    top: 100px; /* يبتعد عن الأعلى بـ 100 بيكسل */
+    right: 5px; /* يبتعد عن يمين الصفحة بـ 5 بيكسل */
+    width: 100px; /* طول الزر 100 بيكسل */
+    height: 50px; /* ارتفاع الزر 50 بيكسل */
+    font-family: 'Simplified Arabic'; /* استخدام خط Simplified Arabic */
+    font-size: 16px; /* حجم الخط */
+    border-radius: 25px; /* جعل الحواف دائرية */
+    background-color: #385e55; /* لون الخلفية الافتراضي */
+    color: white; /* لون النص الافتراضي */
+    border: none; /* إزالة الحدود */
+    transition: all 0.3s; /* تأثير انتقالي عند تغيير الأنماط */
+  }
+  .my-button:hover {
+    background-color: #343a40; /* تغيير لون الخلفية عند المرور بالماوس */
+  }
   </style>
+
 </head>
 <body>
+<button class="my-button" onclick="window.location.href='https://safa2jaidi.github.io/qalTechprog/0001.html';">
+   موقعك الأول
+</button> 
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -98,7 +119,7 @@
     padding: 0;
   }
   .header {
-    background-color: #202125;
+    background-color: #343a40;
     height: 50px;
   }
   .content {
@@ -118,7 +139,7 @@
     height: 200px;
   }
   .footer {
-    background-color: #202125;
+    background-color: #343a40;
     height: 100px;
   }
 </style>
