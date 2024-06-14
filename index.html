@@ -185,6 +185,32 @@ transform: translateX(-50%); /* لتحريك العنصر للوسط   نسبة 
   font-family: 'Simplified Arabic', sans-serif; /*  النوع*/
 } 
 
+/* أضف هذا الكود داخل علامات <style> في الرأس <head> */
+  .table-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  padding: 10px;
+  background-color: white;
+}
+.button-cell {
+  border: 2px solid black;
+  padding: 20px;
+  text-align: center;
+  font-size: 16px;
+  font-family: 'Simplified Arabic', sans-serif;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.button-cell:hover {
+  background-color: #f2f2f2;
+}
+@media (max-width: 768px) {
+  .table-container {
+    flex-direction: column;
+  }
+}
 
 
 </style>
@@ -211,9 +237,19 @@ transform: translateX(-50%); /* لتحريك العنصر للوسط   نسبة 
   });
 </script>
 </body>
+
+<!-- أضف هذا الكود داخل الجسم <body> حيث تريد ظهور الجدول -->
+  <div class="table-container">
+    <div class="button-cell" onclick="window.location.href='رابط_نموذج_1'">نموذج (1)</div>
+    <div class="button-cell" onclick="window.location.href='رابط_نموذج_2'">نموذج (2)</div>
+    <div class="button-cell" onclick="window.location.href='رابط_الوصول_السريع'">الوصول السريع</div>
+  </div>
+  
+
 <div class="copyright">
   © التكنولوجيا والبرمجة/قلقيلية
 </div>
+
 </html>
 
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
