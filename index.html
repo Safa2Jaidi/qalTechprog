@@ -187,28 +187,34 @@ transform: translateX(-50%); /* لتحريك العنصر للوسط   نسبة 
 
 /* أضف هذا الكود داخل علامات <style> في الرأس <head> */
   .table-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 10px;
-  padding: 10px;
-  background-color: white;
+  position: relative; /* تحديد موضع الجدول بالنسبة لموضعه الطبيعي */
+  top: -200px; /* يبتعد عن الاعلى بمقدار -200 بكسل */
+  display: flex; /* يستخدم لتحديد تخطيط الفليكس */
+  flex-direction: row; /* الاتجاه الافتراضي للفليكس هو الصف */
+  justify-content: center; /* محاذاة العناصر أفقيًا في المركز */
+  align-items: center; /* محاذاة العناصر عموديًا في المركز */
+  width: 100%; /* يجعل الحاوية تمتد عبر العرض الكامل للصفحة */
 }
 .button-cell {
-  border: 2px solid black;
-  padding: 20px;
-  text-align: center;
-  font-size: 16px;
-  font-family: 'Simplified Arabic', sans-serif;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+  width: 100px; /* عرض الخلية */
+  height: 30px; /* ارتفاع الخلية */
+  border: none; /* إزالة الحدود */
+  margin: 0; /* إزالة التباعد بين الخلايا */
+  text-align: center; /* محاذاة النص في الوسط */
+  background-color: white; /* لون خلفية الخلية */
+  color: black; /* لون النص */
+  font-size: 16px; /* حجم النص */
+  font-family: 'Simplified Arabic', sans-serif; /* نوع الخط */
+  cursor: pointer; /* تغيير شكل المؤشر عند المرور فوق الخلية */
+  transition: background-color 1s; /* فترة التأثير الانتقالي للون الخلفية */
 }
 .button-cell:hover {
-  background-color: #f2f2f2;
+  background-color: #f2f2f2; /* تغيير لون الخلفية عند مرور المؤشر */
+  color: black; /* تغيير لون النص عند مرور المؤشر */
 }
 @media (max-width: 768px) {
   .table-container {
-    flex-direction: column;
+    flex-direction: column; /* تغيير الاتجاه إلى عمودي عند صغر الشاشة */
   }
 }
 
@@ -240,9 +246,9 @@ transform: translateX(-50%); /* لتحريك العنصر للوسط   نسبة 
 
 <!-- أضف هذا الكود داخل الجسم <body> حيث تريد ظهور الجدول -->
   <div class="table-container">
+    <!-- عند النقر على النص، يتم فتح الرابط المحدد -->
     <div class="button-cell" onclick="window.location.href='رابط_نموذج_1'">نموذج (1)</div>
     <div class="button-cell" onclick="window.location.href='رابط_نموذج_2'">نموذج (2)</div>
-    <div class="button-cell" onclick="window.location.href='رابط_الوصول_السريع'">الوصول السريع</div>
   </div>
   
 
