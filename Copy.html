@@ -89,7 +89,7 @@
  موقعك الأول
 </button> 
 <button class="my-buttoncopy" onclick="window.location.href=
-'index.html';"> الصفحة الرئيسية</button> 
+'Copy.html';">نسخ الصفحة</button> 
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -234,8 +234,7 @@ transform: translateX(-50%); /* لتحريك العنصر للوسط   نسبة 
   color: #f2f2f2; /* تغيير لون النص عند مرور المؤشر */
 }
 
-/* أضف هذا الكود داخل علامات <style> في الرأس <head> */
-  .table-container {
+.table-container {
   position: relative; /* تحديد موضع الجدول بالنسبة لموضعه الطبيعي */
   top: -200px; /* يبتعد عن الاعلى بمقدار -200 بكسل */
   display: flex; /* يستخدم لتحديد تخطيط الفليكس */
@@ -246,6 +245,27 @@ transform: translateX(-50%); /* لتحريك العنصر للوسط   نسبة 
 }
 @media (max-width: 768px) {
   .table-container {
+    flex-direction: column; /* تغيير الاتجاه إلى عمودي عند صغر الشاشة */
+  }
+}
+
+/* أضف هذا الكود داخل علامات <style> في الرأس <head> */
+  .table-Copy {
+  position: fixed;
+  top: 100px; /* يبتعد عن الاعلى بمقدار -500 بكسل */
+  left: 10px;
+  display: flex; /* يستخدم لتحديد تخطيط الفليكس */
+  flex-direction: row; /* الاتجاه الافتراضي للفليكس هو الصف */
+  justify-content: center; /* محاذاة العناصر أفقيًا في المركز */
+  align-items: center; /* محاذاة العناصر عموديًا في المركز */
+  width: 100px; /* طول الزر 100 بيكسل */
+    height: 50px; /* ارتفاع الزر 50 بيكسل */
+    font-family: 'Simplified Arabic'; /* نوع الخط */
+    font-size: 16px; /* حجم الخط */
+  
+}
+@media (max-width: 768px) {
+  .table-Copy {
     flex-direction: column; /* تغيير الاتجاه إلى عمودي عند صغر الشاشة */
   }
 }
@@ -275,6 +295,11 @@ transform: translateX(-50%); /* لتحريك العنصر للوسط   نسبة 
   });
 </script>
 </body>
+
+<div class="table-Copy">
+  <!-- عند النقر على النص، يتم فتح الرابط المحدد -->
+  <div class="button-cell" onclick="window.location.href='index.html'">عودة إلى الرئيسة</div>
+</div>
 
 <!-- أضف هذا الكود داخل الجسم <body> حيث تريد ظهور الجدول -->
   <div class="table-container">
