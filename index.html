@@ -185,16 +185,6 @@ transform: translateX(-50%); /* لتحريك العنصر للوسط   نسبة 
   font-family: 'Simplified Arabic', sans-serif; /*  النوع*/
 } 
 
-/* أضف هذا الكود داخل علامات <style> في الرأس <head> */
-  .table-container {
-  position: relative; /* تحديد موضع الجدول بالنسبة لموضعه الطبيعي */
-  top: -200px; /* يبتعد عن الاعلى بمقدار -200 بكسل */
-  display: flex; /* يستخدم لتحديد تخطيط الفليكس */
-  flex-direction: row; /* الاتجاه الافتراضي للفليكس هو الصف */
-  justify-content: center; /* محاذاة العناصر أفقيًا في المركز */
-  align-items: center; /* محاذاة العناصر عموديًا في المركز */
-  width: 100%; /* يجعل الحاوية تمتد عبر العرض الكامل للصفحة */
-}
 .button-cell {
   width: 100px; /* عرض الخلية */
   height: 30px; /* ارتفاع الخلية */
@@ -211,6 +201,17 @@ transform: translateX(-50%); /* لتحريك العنصر للوسط   نسبة 
 .button-cell:hover {
   background-color: #343a40; /* تغيير لون الخلفية عند مرور المؤشر */
   color: #f2f2f2; /* تغيير لون النص عند مرور المؤشر */
+}
+
+/* أضف هذا الكود داخل علامات <style> في الرأس <head> */
+  .table-container {
+  position: relative; /* تحديد موضع الجدول بالنسبة لموضعه الطبيعي */
+  top: -200px; /* يبتعد عن الاعلى بمقدار -200 بكسل */
+  display: flex; /* يستخدم لتحديد تخطيط الفليكس */
+  flex-direction: row; /* الاتجاه الافتراضي للفليكس هو الصف */
+  justify-content: center; /* محاذاة العناصر أفقيًا في المركز */
+  align-items: center; /* محاذاة العناصر عموديًا في المركز */
+  width: 100%; /* يجعل الحاوية تمتد عبر العرض الكامل للصفحة */
 }
 @media (max-width: 768px) {
   .table-container {
