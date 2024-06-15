@@ -27,7 +27,13 @@
     background-color: #385e55; /* لون الخلفية الافتراضي */
     color: white; /* لون النص الافتراضي */
     font-family: 'Simplified Arabic'; /* نوع الخط */
-    font-size: 16px; /* حجم الخط */
+    white-space: nowrap;
+    font-size: calc(1vw + 1vh + 0.5vmin); /* حجم الخط يتكيف مع الشاشة */
+  min-font-size: 12px; /* حد أدنى لحجم الخط */
+  max-font-size: 18px; /* حد أقصى لحجم الخط */
+  overflow: hidden; /* إخفاء النص الزائد */
+  text-overflow: ellipsis; /* إضافة نقاط الحذف إذا كان النص أطول */
+  
   }
   .my-button:hover {
     background-color: #343a40; /* تغيير لون الخلفية عند المرور بالماوس */
@@ -45,7 +51,14 @@
     background-color: #385e55; /* لون الخلفية الافتراضي */
     color: white; /* لون النص الافتراضي */
     font-family: 'Simplified Arabic'; /* نوع الخط */
-    font-size: 16px; /* حجم الخط */
+    white-space: nowrap;
+    font-size: calc(1vw + 1vh + 0.5vmin); /* حجم الخط يتكيف مع الشاشة */
+  min-font-size: 12px; /* حد أدنى لحجم الخط */
+  max-font-size: 18px; /* حد أقصى لحجم الخط */
+  overflow: hidden; /* إخفاء النص الزائد */
+  text-overflow: ellipsis; /* إضافة نقاط الحذف إذا كان النص أطول */
+
+  
   }
   .my-buttoncopy:hover {
     background-color: #343a40; /* تغيير لون الخلفية عند المرور بالماوس */
@@ -89,7 +102,7 @@
  يتوافق مع الحاسوب 
 </button> 
 <button class="my-buttoncopy" onclick="window.location.href=
-'index.html';"> الرئيسية</button> 
+'index.html';">صفحة في الموقع</button> 
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">

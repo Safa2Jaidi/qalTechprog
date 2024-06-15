@@ -16,7 +16,7 @@
       text-align: right;
     }
     .my-button {
-      white-space: nowrap;
+    
     position: fixed;
     top: 290px; /* يبتعد عن الأعلى بـ 290 بيكسل */
     right: 10px; /* يبتعد عن يمين الصفحة بـ 10 بيكسل */
@@ -28,14 +28,20 @@
     background-color: #385e55; /* لون الخلفية الافتراضي */
     color: white; /* لون النص الافتراضي */
     font-family: 'Simplified Arabic'; /* نوع الخط */
-    font-size: 1em; /* حجم الخط */
+    font-size: calc(1vw + 1vh + 0.5vmin); /* حجم الخط يتكيف مع الشاشة */
+  min-font-size: 12px; /* حد أدنى لحجم الخط */
+  max-font-size: 18px; /* حد أقصى لحجم الخط */
+  overflow: hidden; /* إخفاء النص الزائد */
+  text-overflow: ellipsis; /* إضافة نقاط الحذف إذا كان النص أطول */
+  white-space: nowrap; /* النص في سطر واحد */
+    
+    
   }
   .my-button:hover {
     background-color: #343a40; /* تغيير لون الخلفية عند المرور بالماوس */
   }
 
   .my-buttoncopy {
-    white-space: nowrap;
     position: fixed;
     top: 230px; /* يبتعد عن الأعلى بـ 290 بيكسل */
     right: 10px; /* يبتعد عن يمين الصفحة بـ 10 بيكسل */
@@ -47,7 +53,15 @@
     background-color: #385e55; /* لون الخلفية الافتراضي */
     color: white; /* لون النص الافتراضي */
     font-family: 'Simplified Arabic'; /* نوع الخط */
-    font-size: 1em; /* حجم الخط */
+    
+  font-size: calc(1vw + 1vh + 0.5vmin); /* حجم الخط يتكيف مع الشاشة */
+  min-font-size: 12px; /* حد أدنى لحجم الخط */
+  max-font-size: 18px; /* حد أقصى لحجم الخط */
+  overflow: hidden; /* إخفاء النص الزائد */
+  text-overflow: ellipsis; /* إضافة نقاط الحذف إذا كان النص أطول */
+  white-space: nowrap; /* النص في سطر واحد */
+    
+    
   }
   .my-buttoncopy:hover {
     background-color: #343a40; /* تغيير لون الخلفية عند المرور بالماوس */
@@ -85,12 +99,7 @@
   </style>
 
 </head>
-<body>
-<button class="my-button" onclick="window.location.href=
-'https://safa2jaidi.github.io/qalTechprog/0001.html';">
-يتوافق مع الحاسوب</button> 
-<button class="my-buttoncopy" onclick="window.location.href=
-'Copy.html';">صفحة في الموقع</button> 
+
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -219,7 +228,6 @@ transform: translateX(-50%); /* لتحريك العنصر للوسط   نسبة 
 } 
 
 .button-cell {
-  white-space: nowrap;
   width: 100px; /* عرض الخلية */
   height: 30px; /* ارتفاع الخلية */
   border: none; /* إزالة الحدود */
@@ -290,6 +298,13 @@ transform: translateX(-50%); /* لتحريك العنصر للوسط   نسبة 
 <div class="copyright">
   © التكنولوجيا والبرمجة/قلقيلية
 </div>
+
+<body>
+  <button class="my-button" onclick="window.location.href=
+  'https://safa2jaidi.github.io/qalTechprog/0001.html';">
+  يتوافق مع الحاسوب</button> 
+  <button class="my-buttoncopy" onclick="window.location.href=
+  'Copy.html';">صفحة في الموقع</button> 
 
 </html>
 
