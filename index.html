@@ -8,13 +8,12 @@
   <link rel="icon" href="qalTechprog.png"/>
   <style>
 
-
-@keyframes marquee-animation {
+@keyframes Text-Banner {
     from { transform: translateX(-20%); }
     to { transform: translateX(80%); }
 }
 
-.marquee-container {
+.Solid-Banner {
     position: fixed; 
     top: 50px; 
     width: 100%; 
@@ -24,7 +23,7 @@
     z-index: 1;
 }
 
-.marquee {
+.Text1 {
     margin-top: 5px;
     margin-bottom: 5px;
     display: flex;
@@ -36,102 +35,96 @@
     font-family: 'Simplified Arabic', sans-serif;
 }
 
-
-/* Start animation after a delay of 2 seconds */
-.marquee span {
+.Text1 span {
   display: inline-block;
   padding-left: 100%;
   padding-left: 100%;
-animation: marquee-animation 40s linear infinite;
-    animation-delay: 0s; 
-    font-family: 'Simplified Arabic', sans-serif;
+  animation: Text-Banner 40s linear infinite;
+  animation-delay: 0s; 
+  font-family: 'Simplified Arabic', sans-serif;
 }
 
-
-
-.marquee:hover {
+.Text1:hover {
     color: #f2f2f2;
     background-color: #343a40;
 }
 
-    /* تأكد من أن النص يظهر إلى اليمين عندما يكون في وضع التجميع */
+    
     .navbar-nav .nav-link {
       text-align: right;
     }
-    /* تعديلات للقائمة المنسدلة لتظهر النصوص من اليمين */
+    
     .dropdown-menu {
       text-align: right;
     }
-    .my-button {
-    
+
+    .computer-button {
     position: fixed;
-    top: 290px; /* يبتعد عن الأعلى بـ 290 بيكسل */
-    right: 10px; /* يبتعد عن يمين الصفحة بـ 10 بيكسل */
-    width: 100px; /* طول الزر 100 بيكسل */
-    height: 50px; /* ارتفاع الزر 50 بيكسل */
+    top: 290px;
+    right: 10px; 
+    width: 100px;
+    height: 50px; 
     border-style: solid; 
-    border-color: #f6bc00;
-    border-radius: 25px; /* جعل الحواف دائرية */
-    background-color: #385e55; /* لون الخلفية الافتراضي */
-    color: white; /* لون النص الافتراضي */
-    font-family: 'Simplified Arabic'; /* نوع الخط */
-    font-size: calc(1vw + 1vh + 0.5vmin); /* حجم الخط يتكيف مع الشاشة */
-  min-font-size: 12px; /* حد أدنى لحجم الخط */
-  max-font-size: 18px; /* حد أقصى لحجم الخط */
-  overflow: hidden; /* إخفاء النص الزائد */
-  text-overflow: ellipsis; /* إضافة نقاط الحذف إذا كان النص أطول */
-  white-space: nowrap; /* النص في سطر واحد */
+    border-color: #f2f2f2;
+    border-radius: 25px;
+    background-color: #385e55; 
+    color: #f2f2f2; 
+    font-family: 'Simplified Arabic'; 
+    font-size: calc(1vw + 1vh + 0.5vmin); 
+  min-font-size: 12px;
+  max-font-size: 18px; 
+  overflow: hidden;
+  text-overflow: ellipsis; 
+  white-space: nowrap; 
   
-    
-    
   }
-  .my-button:hover {
-    background-color: #343a40; /* تغيير لون الخلفية عند المرور بالماوس */
+  .computer-button:hover {
+    background-color: #343a40; 
   }
 
-  .my-buttoncopy {
+  .Copy-button {
     position: fixed;
-    top: 230px; /* يبتعد عن الأعلى بـ 290 بيكسل */
-    right: 10px; /* يبتعد عن يمين الصفحة بـ 10 بيكسل */
-    width: 100px; /* طول الزر 100 بيكسل */
-    height: 50px; /* ارتفاع الزر 50 بيكسل */
+    top: 230px; 
+    right: 10px; 
+    width: 100px;
+    height: 50px; 
     border-style: solid; 
-    border-color: #f6bc00;
-    border-radius: 25px; /* جعل الحواف دائرية */
-    background-color: #385e55; /* لون الخلفية الافتراضي */
-    color: white; /* لون النص الافتراضي */
-    font-family: 'Simplified Arabic'; /* نوع الخط */
+    border-color: #f2f2f2;
+    border-radius: 25px; 
+    background-color: #385e55; 
+    color:#f2f2f2; 
+    font-family: 'Simplified Arabic'; 
     
-  font-size: calc(1vw + 1vh + 0.5vmin); /* حجم الخط يتكيف مع الشاشة */
-  min-font-size: 12px; /* حد أدنى لحجم الخط */
-  max-font-size: 18px; /* حد أقصى لحجم الخط */
-  overflow: hidden; /* إخفاء النص الزائد */
-  text-overflow: ellipsis; /* إضافة نقاط الحذف إذا كان النص أطول */
-  white-space: nowrap; /* النص في سطر واحد */
+  font-size: calc(1vw + 1vh + 0.5vmin); 
+  min-font-size: 12px; 
+  max-font-size: 18px;
+  overflow: hidden; 
+  text-overflow: ellipsis; 
+  white-space: nowrap;
     
     
   }
-  .my-buttoncopy:hover {
-    background-color: #343a40; /* تغيير لون الخلفية عند المرور بالماوس */
+  .Copy-button:hover {
+    background-color: #343a40; 
   }
 
 
   .logo {
-    width: 100px; /* عرض الصورة*/
-    height: 100px;/* ارتفاع الصورة*/
-    transition: top 2s ease-in-out; /* تأثير انتقالي للصورة*/
-    position: fixed;/* الصورة ثابتة في مكان محدد*/
-    top: -100px; /* بداية خارج الشاشة */
-    left: 10px; /* تبتعد عن الحافة اليسرى للصفحة بمقدار 10 بكسل */
-    background-size: cover; /* تغطية المساحة المحددة بالصورة */
-    z-index: 9999; /* زيادة القيمة لتظهر فوق الجميع */
-    background-image: url('qalTechprog.png'); /* استبدل بمسار صورتك */
+    width: 100px; 
+    height: 100px;
+    transition: top 2s ease-in-out; 
+    position: fixed;
+    top: -100px;
+    left: 10px; 
+    background-size: cover;
+    z-index: 9999; 
+    background-image: url('qalTechprog.png');
   }
   .logo:hover {
-    animation: shake 2s ease-in-out infinite; /* تأثير اهتزاز عند تمرير الماوس */
+    animation: shake 2s ease-in-out infinite; 
   }
   @keyframes shake {
-    /* تعريف حركات الاهتزاز */
+   
     0% { transform: translate(1px, 1px) rotate(0deg); }
     10% { transform: translate(-1px, -2px) rotate(-1deg); }
     20% { transform: translate(-3px, 0px) rotate(1deg); }
@@ -152,13 +145,13 @@ animation: marquee-animation 40s linear infinite;
     left: 10px;
     top: 140px;
     cursor: pointer;
-    padding: 5px; /* الهوامش من كل الجوانب */
-    text-align: right; /* محاذاة النص من اليمين */
+    padding: 5px;
+    text-align: right; 
   }
 
   #myBox:hover {
-    background-color: #343a40; /* ضع اللون المطلوب هنا */
-    color: #f2f2f2; /* ضع لون النص المطلوب عند الهوفر هنا */
+    background-color: #343a40; 
+    color: #f2f2f2; 
   }
 
   #myBox p {
@@ -167,7 +160,7 @@ animation: marquee-animation 40s linear infinite;
 
   @media (max-width: 600px) {
     #myBox p {
-      font-size: smaller; /* أو يمكنك تحديد حجم معين بالبكسل */
+      font-size: smaller; 
     }
   }
 
@@ -188,7 +181,7 @@ animation: marquee-animation 40s linear infinite;
 
   #myBox:hover .tooltip {
     visibility: visible;
-    animation: fadeinout 3s linear forwards; /* تظهر لمدة ثانيتين ثم تختفي */
+    animation: fadeinout 3s linear forwards;
   }
 
   @keyframes fadeinout {
@@ -197,12 +190,116 @@ animation: marquee-animation 40s linear infinite;
     100% {opacity: 0;}
   }
 
+  body {
+    margin: 0;
+    padding: 0;
+  }
+  .header {
+    background-color: #343a40;
+    height: 50px;
+  }
+  .content {
+    display: flex;
+    height: 300px;
+  }
+  .content .right {
+    background-color: #f2f2f2;
+    width: 35%;
+  }
+  .content .left {
+    background-color: #f2f2f2;
+    width: 65%;
+  }
+  .green-section {
+    background-color: #385e55;
+    height: 200px;
+  }
+  .footer {
+    background-color: #343a40;
+    height: 100px;
+  }
+
+  .copyright {
+  white-space: nowrap;
+  position: absolute; 
+  left: 50%; 
+transform: translateX(-50%); 
+  top: 600px; 
+  color: white;
+  font-size: 1em;
+  font-family: 'Simplified Arabic', sans-serif;
+} 
+
+.button-cell {
+  width: 100px; 
+  height: 30px; 
+  border: none;
+  margin: 0; 
+  background-color: #f6bc00;
+  text-align: center; 
+  color: #343a40; 
+  font-size: 1em;
+  font-family: 'Simplified Arabic', sans-serif;
+  cursor: pointer; 
+  transition: background-color 1s; 
+}
+.button-cell:hover {
+  background-color: #343a40; 
+  color: #f2f2f2; 
+}
+
+.button-cell-Safa2 {
+  width: 100px; 
+  height: 30px; 
+  border: none; 
+  margin: 0; 
+  background-color: #f6bc00; 
+  text-align: center; 
+  color:#343a40; 
+  font-size: 1em; 
+  font-family: 'Simplified Arabic', sans-serif; 
+  cursor: pointer; 
+  transition: background-color 1s; 
+}
+.button-cell-Safa2:hover {
+  background-color: #343a40; 
+  color: #f2f2f2;
+}
+
+  .table-container {
+  position: relative; 
+  top: -200px; 
+  display: flex; 
+  flex-direction: row; 
+  justify-content: center; 
+  align-items: center;
+  width: 100%; 
+}
+@media (max-width: 768px) {
+  .table-container {
+    flex-direction: column; 
+  }
+}
+
+.table-container-Safa2 {
+  position: absolute;
+    top: 200px; 
+  display: flex; 
+  flex-direction: row;
+  justify-content: center; 
+  align-items: center; 
+  width: 100%; 
+}
+@media (max-width: 768px) {
+  .table-container-Safa2 {
+    flex-direction: column;
+  }
+}
 
   </style>
 
 </head>
-
-
+<body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -231,7 +328,7 @@ animation: marquee-animation 40s linear infinite;
         <a class="dropdown-item" href="https://youtube.com/playlist?list=PL6qKzftU_wpV5hHHC26rMeLz0Z8b-f6-N&feature=shared">جولة في أنحاء جامعتي</a>
       </div>
     </li>
-    <!-- قم بتكرار الكود التالي لإضافة المزيد من القوائم -->
+    
     <li class="nav-item dropdown">
       <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         الإلكترونيات
@@ -274,132 +371,12 @@ animation: marquee-animation 40s linear infinite;
         <a class="dropdown-item" href="https://www.youtube.com/@shar3iagirlsschool"target="_blank">يوتيوب</a>
         <a class="dropdown-item" href="https://www.youtube.com/@Safa2Jaidi"target="_blank">معلمة التكنولوجيا والبرمجة</a>
       </div>
-   
-      <!-- قوائم منسدلة -->
-      <!-- ... -->
     </ul>
   </div>
 </nav>
 
-<!-- يمكنك إضافة محتوى الصفحة هنا -->
-<!DOCTYPE html>
-<html lang="ar" dir="rtl">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<style>
-  body {
-    margin: 0;
-    padding: 0;
-  }
-  .header {
-    background-color: #343a40;
-    height: 50px;
-  }
-  .content {
-    display: flex;
-    height: 300px;
-  }
-  .content .right {
-    background-color: #f6bc00;
-    width: 35%;
-  }
-  .content .left {
-    background-color: white;
-    width: 65%;
-  }
-  .green-section {
-    background-color: #385e55;
-    height: 200px;
-  }
-  .footer {
-    background-color: #343a40;
-    height: 100px;
-  }
-
-  /* تحديد خصائص النص لعبارة الحقوق المحفوظة */
-  .copyright {
-  white-space: nowrap;
-  position: absolute; /* استخدام الوضعية المطلقة للتحكم بموقع العنصر */
-  left: 50%; /* تحديد الموقع الأفقي للعنصر */
-transform: translateX(-50%); /* لتحريك العنصر للوسط   نسبة مئوية*/
-  top: 600px; /* تحديد المسافة من الحافة العلوية للصفحة */
-  color: white; /* تحديد لون النص بالأبيض */
-  font-size: 1em; /* تحديد حجم النص */
-  font-family: 'Simplified Arabic', sans-serif; /*  النوع*/
-} 
-
-.button-cell {
-  width: 100px; /* عرض الخلية */
-  height: 30px; /* ارتفاع الخلية */
-  border: none; /* إزالة الحدود */
-  margin: 0; /* إزالة التباعد بين الخلايا */
-  background-color: #f6bc00; /* لون خلفية الخلية */
-  text-align: center; /* محاذاة النص في الوسط */
-  color: black; /* لون النص */
-  font-size: 1em; /* حجم النص */
-  font-family: 'Simplified Arabic', sans-serif; /* نوع الخط */
-  cursor: pointer; /* تغيير شكل المؤشر عند المرور فوق الخلية */
-  transition: background-color 1s; /* فترة التأثير الانتقالي للون الخلفية */
-}
-.button-cell:hover {
-  background-color: #343a40; /* تغيير لون الخلفية عند مرور المؤشر */
-  color: #f2f2f2; /* تغيير لون النص عند مرور المؤشر */
-}
-
-.button-cell-Safa2 {
-  width: 100px; /* عرض الخلية */
-  height: 30px; /* ارتفاع الخلية */
-  border: none; /* إزالة الحدود */
-  margin: 0; /* إزالة التباعد بين الخلايا */
-  background-color: #f6bc00; /* لون خلفية الخلية */
-  text-align: center; /* محاذاة النص في الوسط */
-  color: black; /* لون النص */
-  font-size: 1em; /* حجم النص */
-  font-family: 'Simplified Arabic', sans-serif; /* نوع الخط */
-  cursor: pointer; /* تغيير شكل المؤشر عند المرور فوق الخلية */
-  transition: background-color 1s; /* فترة التأثير الانتقالي للون الخلفية */
-}
-.button-cell-Safa2:hover {
-  background-color: #343a40; /* تغيير لون الخلفية عند مرور المؤشر */
-  color: #f2f2f2; /* تغيير لون النص عند مرور المؤشر */
-}
-
-/* أضف هذا الكود داخل علامات <style> في الرأس <head> */
-  .table-container {
-  position: relative; /* تحديد موضع الجدول بالنسبة لموضعه الطبيعي */
-  top: -200px; /* يبتعد عن الاعلى بمقدار -200 بكسل */
-  display: flex; /* يستخدم لتحديد تخطيط الفليكس */
-  flex-direction: row; /* الاتجاه الافتراضي للفليكس هو الصف */
-  justify-content: center; /* محاذاة العناصر أفقيًا في المركز */
-  align-items: center; /* محاذاة العناصر عموديًا في المركز */
-  width: 100%; /* يجعل الحاوية تمتد عبر العرض الكامل للصفحة */
-}
-@media (max-width: 768px) {
-  .table-container {
-    flex-direction: column; /* تغيير الاتجاه إلى عمودي عند صغر الشاشة */
-  }
-}
-
-.table-container-Safa2 {
-  position: absolute;
-    top: 200px; 
-  display: flex; /* يستخدم لتحديد تخطيط الفليكس */
-  flex-direction: row; /* الاتجاه الافتراضي للفليكس هو الصف */
-  justify-content: center; /* محاذاة العناصر أفقيًا في المركز */
-  align-items: center; /* محاذاة العناصر عموديًا في المركز */
-  width: 100%; /* يجعل الحاوية تمتد عبر العرض الكامل للصفحة */
-}
-@media (max-width: 768px) {
-  .table-container-Safa2 {
-    flex-direction: column; /* تغيير الاتجاه إلى عمودي عند صغر الشاشة */
-  }
-}
 
 
-</style>
-</head>
-<body>
   <div class="header"></div>
   <div class="content">
     <div class="right"></div>
@@ -410,17 +387,15 @@ transform: translateX(-50%); /* لتحريك العنصر للوسط   نسبة 
 
   <div class="logo"></div>
 
-<!-- أضف هذا القسم قبل إغلاق الـ </body> في صفحتك -->
 <script>
   window.onload = function() {
-    document.querySelector('.logo').style.top = '0px'; /* تدخل الصورة بسلاسة */
+    document.querySelector('.logo').style.top = '0px'; 
   };
 
   document.querySelector('.logo').addEventListener('click', function() {
-    window.location.href = 'https://youtu.be/GVr3t0IOH2U'; /* استبدل بالرابط الذي تريده */
+    window.location.href = 'https://youtu.be/GVr3t0IOH2U'; 
   });
 </script>
-</body>
 
 
   
@@ -437,20 +412,16 @@ transform: translateX(-50%); /* لتحريك العنصر للوسط   نسبة 
       setTimeout(function() {
         box.classList.remove('show-tooltip');
         window.location.href = 'https://safa2jaidi.github.io/qalTechprog/Firebase.html';
-      }, 2000); // تأخير لمدة ثانيتين قبل فتح الرابط
+      });
     };
     </script>
   
-  
-  <!-- أضف هذا الكود داخل الجسم <body> حيث تريد ظهور الجدول -->
     <div class="table-container">
-      <!-- عند النقر على النص، يتم فتح الرابط المحدد -->
       <div class="button-cell" onclick="window.location.href='https://safa2jaidi.github.io/qalTechprog/comment.html'">نموذج (1)</div>
       <div class="button-cell" onclick="window.location.href='https://safa2jaidi.github.io/qalTechprog/mycomment.html'">نموذج (2)</div>
     </div>
   
     <div class="table-container-Safa2">
-      <!-- عند النقر على النص، يتم فتح الرابط المحدد -->
       <div class="button-cell-Safa2" onclick="window.location.href='https://safa2jaidi.github.io/Shar3iaGirlsSchool/'">المدرسة</div>
       <div class="button-cell-Safa2" onclick="window.location.href='https://safa2jaidi.github.io/qalTechprog/'">اللجنة</div>
       <div class="button-cell-Safa2" onclick="window.location.href='https://safa2jaidi.github.io/PalTechprog/'">التربية</div>
@@ -462,21 +433,20 @@ transform: translateX(-50%); /* لتحريك العنصر للوسط   نسبة 
 
 <body>
 
-  <div class="marquee-container">
-    <div class="marquee">
+  <div class="Solid-Banner">
+    <div class="Text1">
         <span>(نشير إليها والبقية عليك) سلسلة تعليمية تدريبية، إعداد الملفات: معلمة التكنولوجيا والبرمجة "م. صفاء جعيدي"/مدرسة إناث قلقيلية الشرعية/وزارة الأوقاف والشؤون الدينية الفلسطينية، التدقيق والتطوير والدورات التدريبية المباشرة: المشرفة التربوية "أ. ختام عيد"/مديرية التربية والتعليم/قلقيلية/فلسطين.</span>
     </div>
 </div>
 
 
-  <button class="my-button" onclick="window.location.href=
+  <button class="computer-button" onclick="window.location.href=
   'https://safa2jaidi.github.io/qalTechprog/0001.html';">
   للحاسوب</button> 
-  <button class="my-buttoncopy" onclick="window.location.href=
+  <button class="Copy-button" onclick="window.location.href=
   'Copy.html';">نسخة</button> 
 
 </html>
-
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
