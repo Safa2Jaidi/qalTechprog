@@ -8,9 +8,19 @@
   <link rel="icon" href="qalTechprog.png"/>
   <style>
 
+.logo {
+    position: fixed;
+    width: 100px; 
+    height: 100px;
+    left: 10px; 
+    background-size: cover;
+    z-index: 9999; 
+    background-image: url('qalTechprog.png');
+  }
+
 @keyframes Text-Banner {
-    from { transform: translateX(-20%); }
-    to { transform: translateX(80%); }
+    from { transform: translateX(-30%); }
+    to { transform: translateX(70%); }
 }
 
 .Solid-Banner {
@@ -58,86 +68,7 @@
       text-align: right;
     }
 
-    .computer-button {
-    position: fixed;
-    top: 290px;
-    right: 10px; 
-    width: 100px;
-    height: 50px; 
-    border-style: solid; 
-    border-color: #f2f2f2;
-    border-radius: 25px;
-    background-color: #385e55; 
-    color: #f2f2f2; 
-    font-family: 'Simplified Arabic'; 
-    font-size: calc(1vw + 1vh + 0.5vmin); 
-  min-font-size: 12px;
-  max-font-size: 18px; 
-  overflow: hidden;
-  text-overflow: ellipsis; 
-  white-space: nowrap; 
   
-  }
-  .computer-button:hover {
-    background-color: #343a40; 
-  }
-
-  .Copy-button {
-    position: fixed;
-    top: 230px; 
-    right: 10px; 
-    width: 100px;
-    height: 50px; 
-    border-style: solid; 
-    border-color: #f2f2f2;
-    border-radius: 25px; 
-    background-color: #385e55; 
-    color:#f2f2f2; 
-    font-family: 'Simplified Arabic'; 
-    
-  font-size: calc(1vw + 1vh + 0.5vmin); 
-  min-font-size: 12px; 
-  max-font-size: 18px;
-  overflow: hidden; 
-  text-overflow: ellipsis; 
-  white-space: nowrap;
-    
-    
-  }
-  .Copy-button:hover {
-    background-color: #343a40; 
-  }
-
-
-  .logo {
-    width: 100px; 
-    height: 100px;
-    transition: top 2s ease-in-out; 
-    position: fixed;
-    top: -100px;
-    left: 10px; 
-    background-size: cover;
-    z-index: 9999; 
-    background-image: url('qalTechprog.png');
-  }
-  .logo:hover {
-    animation: shake 2s ease-in-out infinite; 
-  }
-  @keyframes shake {
-   
-    0% { transform: translate(1px, 1px) rotate(0deg); }
-    10% { transform: translate(-1px, -2px) rotate(-1deg); }
-    20% { transform: translate(-3px, 0px) rotate(1deg); }
-    30% { transform: translate(3px, 2px) rotate(0deg); }
-    40% { transform: translate(1px, -1px) rotate(1deg); }
-    50% { transform: translate(-1px, 2px) rotate(-1deg); }
-    60% { transform: translate(-3px, 1px) rotate(0deg); }
-    70% { transform: translate(3px, 1px) rotate(-1deg); }
-    80% { transform: translate(-1px, -1px) rotate(1deg); }
-    90% { transform: translate(1px, 2px) rotate(0deg); }
-    100% { transform: translate(1px, -2px) rotate(-1deg); }
-  }
-
   #myBox {
     font-family:'Simplified Arabic', sans-serif;
     border: 3px solid #343a40;
@@ -248,24 +179,6 @@ transform: translateX(-50%);
   color: #f2f2f2; 
 }
 
-.button-cell-Safa2 {
-  width: 100px; 
-  height: 30px; 
-  border: none; 
-  margin: 0; 
-  background-color: #f6bc00; 
-  text-align: center; 
-  color:#343a40; 
-  font-size: 1em; 
-  font-family: 'Simplified Arabic', sans-serif; 
-  cursor: pointer; 
-  transition: background-color 1s; 
-}
-.button-cell-Safa2:hover {
-  background-color: #343a40; 
-  color: #f2f2f2;
-}
-
   .table-container {
   position: relative; 
   top: -200px; 
@@ -281,20 +194,7 @@ transform: translateX(-50%);
   }
 }
 
-.table-container-Safa2 {
-  position: absolute;
-    top: 200px; 
-  display: flex; 
-  flex-direction: row;
-  justify-content: center; 
-  align-items: center; 
-  width: 100%; 
-}
-@media (max-width: 768px) {
-  .table-container-Safa2 {
-    flex-direction: column;
-  }
-}
+
 
   </style>
 
@@ -307,9 +207,22 @@ transform: translateX(-50%);
   <div class="collapse navbar-collapse" id="navbarNavDropdown">
     <ul class="navbar-nav">
       <li class="nav-item active">
-        <a class="nav-link" href="#">الرئيسية <span class="sr-only">(current)</span></a>
-      </li>
-    </li>
+        <a class="nav-link" href="index.html">الرئيسية <span class="sr-only">(current)</span></a>
+    <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      التصميم
+      </a>
+      <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink1">
+        <a class="dropdown-item" href="https://youtu.be/8X-d1g8fpss"target="_blank">مفهوم الطبقات</a>
+      </div>
+    <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      المونتاج
+      </a>
+      <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink1">
+        <a class="dropdown-item" href="https://youtube.com/playlist?list=PL6qKzftU_wpXzPJJyzHrhc43jzXgD_Xkn&feature=shared"target="_blank">المونتاج ببساطة</a>
+      </div>
+    
     <li class="nav-item dropdown">
       <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         النمذجة
@@ -327,7 +240,6 @@ transform: translateX(-50%);
         <a class="dropdown-item" href="https://youtu.be/D9_nnlrFFcQ"target="_blank">إضافة المكونات إلى المجسم</a>
         <a class="dropdown-item" href="https://youtube.com/playlist?list=PL6qKzftU_wpV5hHHC26rMeLz0Z8b-f6-N&feature=shared">جولة في أنحاء جامعتي</a>
       </div>
-    </li>
     
     <li class="nav-item dropdown">
       <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -340,7 +252,7 @@ transform: translateX(-50%);
         <a class="dropdown-item" href="https://drive.google.com/file/d/1avtutGvlZHHRrYrXeTq4Ya9IDGbJKg9X/view?usp=sharing"target="_blank">إلكترونيات الصف العاشر</a>
         <a class="dropdown-item" href="https://youtube.com/playlist?list=PL6qKzftU_wpXHoTJHKKE7GliBNSDnCoT1&feature=shared"target="_blank">إلكترونيات المنهاج الفلسطيني</a>
       </div>
-    </li>
+    
     <li class="nav-item dropdown">
       <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
        البرمجة
@@ -361,7 +273,7 @@ transform: translateX(-50%);
         <a class="dropdown-item" href="https://youtu.be/k_6K758QrP8"target="_blank">تنكر كاد</a>
         <a class="dropdown-item" href="https://youtu.be/CAzlRSMHXWw"target="_blank">مراحل إنتاج الروبوت</a>
       </div>
-    </li>
+    
     <li class="nav-item dropdown">
       <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
        إناث الشرعية
@@ -370,6 +282,17 @@ transform: translateX(-50%);
         <a class="dropdown-item" href="https://www.facebook.com/shar3iagirlsschool"target="_blank">فيسبوك</a>
         <a class="dropdown-item" href="https://www.youtube.com/@shar3iagirlsschool"target="_blank">يوتيوب</a>
         <a class="dropdown-item" href="https://www.youtube.com/@Safa2Jaidi"target="_blank">معلمة التكنولوجيا والبرمجة</a>
+      
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+           تطبيقات
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink2">
+            <a class="dropdown-item" href="https://safa2jaidi.github.io/PalTechprog/"target="_blank">Paltechprog-PTp</a>
+            <a class="dropdown-item" href="https://safa2jaidi.github.io/Shar3iaGirlsSchool/"target="_blank">Shar3iaGirlsSchool</a>
+            <a class="dropdown-item" href="https://safa2jaidi.github.io/qalTechprog/"target="_blank">qalTechprog-qTp</a>
+            <a class="dropdown-item" href="https://safa2jaidi.github.io/Safa2Jaidi/"target="_blank">Safa2Jaidi</a>
+      
       </div>
     </ul>
   </div>
@@ -386,7 +309,6 @@ transform: translateX(-50%);
   <div class="footer"></div>
 
   <div class="logo"></div>
-
 <script>
   window.onload = function() {
     document.querySelector('.logo').style.top = '0px'; 
@@ -421,11 +343,6 @@ transform: translateX(-50%);
       <div class="button-cell" onclick="window.location.href='https://safa2jaidi.github.io/qalTechprog/mycomment.html'">نموذج (2)</div>
     </div>
   
-    <div class="table-container-Safa2">
-      <div class="button-cell-Safa2" onclick="window.location.href='https://safa2jaidi.github.io/Shar3iaGirlsSchool/'">المدرسة</div>
-      <div class="button-cell-Safa2" onclick="window.location.href='https://safa2jaidi.github.io/qalTechprog/'">اللجنة</div>
-      <div class="button-cell-Safa2" onclick="window.location.href='https://safa2jaidi.github.io/PalTechprog/'">التربية</div>
-    </div>
 
 <div class="copyright">
   © التكنولوجيا والبرمجة/قلقيلية qTp
@@ -439,12 +356,6 @@ transform: translateX(-50%);
     </div>
 </div>
 
-
-  <button class="computer-button" onclick="window.location.href=
-  'https://safa2jaidi.github.io/qalTechprog/0001.html';">
-  للحاسوب</button> 
-  <button class="Copy-button" onclick="window.location.href=
-  'Copy.html';">نسخة</button> 
 
 </html>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
