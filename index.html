@@ -69,31 +69,7 @@
     }
 
   
-  #myBox {
-    font-family:'Simplified Arabic', sans-serif;
-    border: 3px solid #343a40;
-    position: absolute;
-    left: 10px;
-    top: 140px;
-    cursor: pointer;
-    padding: 5px;
-    text-align: right; 
-  }
-
-  #myBox:hover {
-    background-color: #343a40; 
-    color: #f2f2f2; 
-  }
-
-  #myBox p {
-    margin: 0;
-  }
-
-  @media (max-width: 600px) {
-    #myBox p {
-      font-size: smaller; 
-    }
-  }
+  
 
   .tooltip {
     visibility: hidden;
@@ -162,7 +138,7 @@ transform: translateX(-50%);
 } 
 
 .button-cell {
-  width: 100px; 
+  width: 150px; 
   height: 30px; 
   border: none;
   margin: 0; 
@@ -180,8 +156,8 @@ transform: translateX(-50%);
 }
 
   .table-container {
-  position: relative; 
-  top: -200px; 
+  position: fixed; 
+  top: 85px; 
   display: flex; 
   flex-direction: row; 
   justify-content: center; 
@@ -319,13 +295,6 @@ transform: translateX(-50%);
   });
 </script>
 
-
-  
-  <div id="myBox">
-    <p>ماذا بعد؟</p>
-    <p>ماذا تعرف عن فايربيس؟</p>
-    <span class="tooltip">قريباً.. مرورك مقدر</span>
-  </div>
   
   <script>
     document.getElementById('myBox').onclick = function() {
