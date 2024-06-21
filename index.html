@@ -20,6 +20,7 @@
     box-sizing: border-box;
     font-family: "poppins";
 }
+
 .collection{
     margin-top: 80px;
     height: 100vh;
@@ -124,11 +125,27 @@
     .dropdown-menu {
       text-align: right;}
 
-    
+
+    .video-container {
+    position: fixed;
+    bottom: 0; 
+    left: 50%; 
+    transform: translateX(-50%); 
+    width: 320;
+    height: 240;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
   </style>
 
 </head>
 <body>
+
+  <div class="video-container">
+    <video src="Jawla.mp4" width="320" height="240" controls ></video>
+  </div>
 
   <section class="collection">
     <div class="swiper mySwiper">
@@ -184,11 +201,8 @@
     </div>
     </div>
   </section>
-  
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-  
   <script>
-  
   var swiper = new Swiper(".mySwiper", {
     effect: "coverflow",
     grabCursor: true,
@@ -208,7 +222,6 @@
       disableOnInteraction:false,
     }
   });
-  
   </script>
 
   <div class="Solid-Banner">
