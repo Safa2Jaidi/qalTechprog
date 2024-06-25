@@ -71,7 +71,7 @@
     <p>ماذا تعرف عن فايربيس؟</p>
   <p>سلسلة: نشير إليها والبقية عليك</p>
     
-    <a href="https://safa2qtp.web.app/" target="_blank" style="display: inline-block; margin-top: 20px; padding: 10px 20px; background-color: #007bff; color: white; text-decoration: none; border-radius: 5px; font-size: calc(10px + 1vw);">أهلاً بك</a>
+    <a href="https://drive.google.com/file/d/1YTsfhcjZeqZs8iTHY_Ec4X51r7yztVDC/view?usp=sharing" target="_blank" style="display: inline-block; margin-top: 20px; padding: 10px 20px; background-color: #007bff; color: white; text-decoration: none; border-radius: 5px; font-size: calc(10px + 1vw);">أهلاً بك</a>
   </div>
 
   <div class="Solid-Banner">
@@ -176,7 +176,23 @@
     </ul>
   </div>
 </nav>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js"></script>
 
+<script>
+import { db } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js"
+db.collection('students').doc('STUDENT_ID').get()
+    .then((doc) => {
+        if (doc.exists) {
+            console.log('اسم الطالب:', doc.data().name);
+        } else {
+            console.log('الرقم غير موجود.');
+        }
+    })
+    .catch((error) => {
+        console.error('خطأ في القراءة:', error);
+    });
+
+  </script>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
 
