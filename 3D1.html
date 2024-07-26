@@ -1,0 +1,1012 @@
+<!DOCTYPE html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<title>التكنولوجيا والبرمجة/فلسطين</title>
+<link rel="icon" href="PTP.png"/>
+<style>
+
+body {
+  margin: 0;
+  height: 100vh;
+  background: linear-gradient(#9cf, #69c);
+  perspective: 1000px;
+}
+
+@keyframes rotateDrawing {
+  0% {
+    transform: translate(-50%, -50%) translateZ(-20vmin) rotateY(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) translateZ(-20vmin) rotateY(-360deg);
+  }
+}
+
+.canvas {
+  animation: rotateDrawing 15s linear infinite;
+  width: 70vmin;
+  height: 75vmin;
+  abackground: #f002;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) translate3d(0vmin, 0, -40vmin) rotate3d(0, 1, 0, 100deg);
+  transform-style: preserve-3d;
+}
+
+.canvas:active {
+  animation-play-state: paused;
+}
+
+.cube {
+  --h: 0deg;
+  --s: 50%;
+  --l: 50%;
+  --t: 0;
+  background: hsl(var(--h), var(--s), var(--l));
+  position: absolute;
+  transform: translateZ(calc(var(--t) * -1));
+  transform-style: preserve-3d;
+}
+
+.cube::before,
+.cube::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: var(--d);
+  height: 100%;
+  background: hsl(var(--h), var(--s), calc(var(--l) * 0.8));
+  transform: rotateY(-90deg);
+  transform-origin: 0 50%;
+}
+
+.cube::after {
+  left: auto;
+  right: 0;
+  transform-origin: 100% 50%;
+  transform: rotateY(90deg);
+}
+
+.cube > div {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: hsl(var(--h), var(--s), var(--l));
+  transform: translate3d(0, 0, var(--d));
+  transform-style: preserve-3d;
+}
+
+.cube > div::before,
+.cube > div::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: hsl(var(--h), var(--s), calc(var(--l) * 1.15));
+  width: 100%;
+  height: var(--d);
+  transform: rotateX(-90deg);
+  transform-origin: 50% 0;
+}
+
+.cube > div::after {
+  top: auto;
+  bottom: 0;
+  transform: rotateX(90deg);
+  transform-origin: 50% 100%;
+  background: hsl(var(--h), var(--s), calc(var(--l) * 0.6));
+}
+
+/* drawing */
+.canvas div {
+  position: absolute;
+  transform-style: preserve-3d;
+}
+
+.step {
+  --s: 10%;
+  --l: 80%;
+  --d: 15vmin;
+  --t: 2vmin;
+  width: 29vmin;
+  height: 4vmin;
+  bottom: 0;
+  right: 3vmin;
+}
+
+.step > div::before {
+  background:
+    linear-gradient(hsl(var(--h), var(--s), calc(var(--l) * 1.15)) calc(99% - 2vmin), #444 0, #000 99%, hsl(var(--h), var(--s), calc(var(--l) * 1.15)) 0)
+}
+
+.door {
+  width: 25vmin;
+  height: 50vmin;
+  bottom: 4vmin;
+  right: 5vmin;
+}
+
+.door .cube {
+  --h: 20deg;
+  --s: 40%;
+  --l: 40%;
+  --d: 4vmin;
+  --t: 2vmin;
+}
+
+.frame-top {
+  width: 100%;
+  height: 2vmin;
+}
+
+.frame-side {
+  width: 2vmin;
+  height: 100%;
+}
+
+.frame-side + .frame-side {
+  right: 0;
+}
+
+.door .door-board {
+  --d: 2vmin;
+  --t: 2vmin;
+  top: 2vmin;
+  left: 2vmin;
+  width: calc(100% - 4vmin);
+  height: calc(100% - 2vmin);
+  transform: translateZ(calc(-0.5 * var(--t))) rotateY(60deg) ;
+  transform-origin: 0% 50%;
+  background: 
+    linear-gradient(#777 0 0) 50% 34% / 20% 1%,
+    repeating-linear-gradient(#ddd 0 7%, #0000 0 15%) 50% 38% / 30% 6%,
+    linear-gradient(#fff 0 0) 50% 36% / 40% 10%,
+    
+    linear-gradient(#744f3b 2vmin, #0000 0 calc(100% - 2vmin), #744f3b 0),
+    linear-gradient(to right, #744f3b 2vmin, #0000 0 calc(100% - 2vmin), #744f3b 0),
+    linear-gradient(#cdf3 0 0)
+    ;
+  background-repeat: no-repeat;
+}
+
+.door .door-board > div {
+  background: 
+    linear-gradient(#744f3b 2vmin, #0000 0 calc(100% - 2vmin), #744f3b 0),
+    linear-gradient(to right, #744f3b 2vmin, #0000 0 calc(100% - 2vmin), #744f3b 0),
+    linear-gradient(#cdf3 0 0)
+    ;
+}
+
+.door .door-board::after {
+  background:
+    #643f2b radial-gradient(gray 70%, #0000 0) no-repeat 50% 53% / 1vmin 1vmin;
+}
+
+.door-board span.cube {
+  --h: 0;
+  --s: 0%;
+  --l: 80%;
+  --d: 0.5vmin;
+  --t: -3vmin;
+  display: block;
+  position: absolute;
+}
+
+.door-board span.cube.handle {
+  top: 50%;
+  right: 0.25vmin;
+  width: 25%;
+  height: 5%;
+}
+
+.door-board span.cube.handle > div {
+  background:
+    #eee radial-gradient(gray 70%, #0000 0) no-repeat 80% 53% / 1vmin 1vmin;
+}
+
+.door-board span.cube.neck {
+  --d: 1.5vmin;
+  --t: -1.75vmin;
+  top: 50%;
+  right: 0.25vmin;
+  width: 5%;
+  height: 5%;
+}
+
+.window {
+  width: 30vmin;
+  height: 45vmin;
+  top: 20%;
+  left: 3vmin;
+  transform-style: preserve-3d;
+  background:
+    linear-gradient(45deg, #0000 70%, #fff2 0 75%, #0000 0 78%, #fff2 0 80%, #0000 0)
+    ;
+  background-color: #cdf3;
+  
+}
+
+.window div {
+  --d: 3vmin;
+  --t: 1.5vmin;
+  transform-style: preserve-3d;
+}
+
+.frame-top + .frame-top {
+  bottom: 0;
+}
+
+.wall {
+  width: 100%;
+  height: 100%;
+}
+
+.wall .cube {
+  --s: 10%;
+  --l: 80%;
+  --d: 4vmin;
+  --t: 2vmin;
+}
+
+.wall .cube:nth-child(1) { width: 5%; height: 100%; }
+.wall .cube:nth-child(2) { left: 33vmin; width: 7vmin; height: 100%; }
+.wall .cube:nth-child(3) { width: 50%; right: 0; bottom: 54vmin; height: 20%; }
+.wall .cube:nth-child(4) { width: 100%; height: 20%; }
+.wall .cube:nth-child(5) { width: 50%; bottom: 0; height: 20%; }
+.wall .cube:nth-child(6) { right: 0; width: 5vmin; height: 100%; }
+.wall .cube:nth-child(7) { 
+  --d: 82vmin;
+  --t: 80vmin;
+  left: -2.5vmin;
+  width: 4vmin; 
+  height: 100%; 
+}
+
+.wall .cube:nth-child(7) .poster-1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 3.35vmin;
+  font-family: Arial, sans-serif;
+  box-sizing: border-box;
+  width: 20vmin;
+  height: 30vmin;
+  left: 0;
+  background: radial-gradient(circle, #0000 25%, #d00 0 30%, #0000 0),
+    linear-gradient(-45deg, #0000 45%, #d00 0 55%, #0000 0) no-repeat 50% 50% / 7vmin 7vmin;
+  background-color: #bbb;
+  position: absolute;
+  transform: rotateY(90deg) translate3d(-19.5vmin, 20vmin, -10.1vmin) rotateZ(6deg) scaleX(-1);
+  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%, 0% 77%, 5% 75%, 0% 74%);
+}
+
+
+.wall .cube:nth-child(7) .poster-2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 2.5vmin;
+  font-family: Georgia, sans-serif;
+  box-sizing: border-box;
+  width: 18vmin;
+  height: 20vmin;
+  left: 0;
+  background-color: #d8d8c5;
+  position: absolute;
+  transform: rotateY(90deg) translate3d(-64vmin, 40vmin, -9.1vmin) rotateZ(-4deg) scaleX(-1);
+}
+
+.wall .cube:nth-child(7) .no-posters {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 3.35vmin;
+  font-family: Arial, sans-serif;
+  box-sizing: border-box;
+  width: 20vmin;
+  height: 30vmin;
+  left: 0;
+  background: radial-gradient(circle, #0000 25%, #d00 0 30%, #0000 0),
+    linear-gradient(-45deg, #0000 45%, #d00 0 55%, #0000 0) no-repeat 50% 50% / 7vmin 7vmin;
+  background-color: #ccc;
+  position: absolute;
+  transform: rotateY(90deg) translate3d(-40vmin, 20vmin, -10.1vmin) scaleX(-1);
+  clip-path: polygon(0% 0%, 33% 0%, 35% 5%, 38% 0%, 100% 0%, 100% 30%, 90% 32%, 97% 35%, 92% 37%, 100% 37.5%, 100% 100%, 5% 100%, 0% 99%);
+}
+
+.wall .cube:nth-child(7) .ice-cream {
+  --color: #fff;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  text-align: center;
+  font-size: 3.35vmin;
+  font-family: Georgia, Garamond, serif;
+  box-sizing: border-box;
+  padding-bottom: 2vmin;
+  width: 20vmin;
+  height: 30vmin;
+  left: 0;
+  background: 
+    radial-gradient(circle, #333 15%, #0000 0) no-repeat 40% 25% / 20% 20%,
+    radial-gradient(circle, #333 15%, #0000 0) no-repeat 60% 25% / 20% 20%,
+    
+    radial-gradient(farthest-side at 50% 0%, #0000 30%, #333 0 50%, #0000 0) no-repeat 50% 36% / 20% 7%,
+    
+    radial-gradient(circle at 50% 84%, var(--color) 26%, #0000 0) no-repeat 50% -100% / 70% 70%,
+    radial-gradient(circle at 50% 50%, var(--color) 35%, #0000 0) no-repeat 50% 40% / 20% 20%,
+    radial-gradient(circle at 50% 50%, var(--color) 30%, #0000 0) no-repeat 63% 38% / 20% 20%,
+    radial-gradient(circle at 50% 50%, var(--color) 35%, #0000 0) no-repeat 32% 37% / 20% 20%,
+    radial-gradient(circle at 50% 50%, var(--color) 24%, #0000 0) no-repeat 40% 40% / 20% 20%,
+    radial-gradient(circle at 50% 50%, var(--color) 35%, #0000 0) no-repeat 70% 37% / 20% 20%,
+    
+
+    conic-gradient(at 50% 100%, #eb8 20deg, #0000 0 340deg, #eb8 0) no-repeat 50% 50% / 7vmin 50%;
+  background-color: #ddd;
+  position: absolute;
+  transform: rotateY(90deg) translate3d(-55vmin, 20vmin, -6.01vmin);
+}
+
+
+.wall .cube:nth-child(7) .poster {
+  --color: #f69;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  text-align: center;
+  font-size: 3.35vmin;
+  font-family: Georgia, Garamond, serif;
+  box-sizing: border-box;
+  padding-bottom: 2vmin;
+  width: 20vmin;
+  height: 30vmin;
+  left: 0;
+  background: 
+    radial-gradient(circle, #333 15%, #0000 0) no-repeat 40% 25% / 20% 20%,
+    radial-gradient(circle, #333 15%, #0000 0) no-repeat 60% 25% / 20% 20%,
+    
+    radial-gradient(farthest-side at 50% 0%, #333 0 50%, #0000 0) no-repeat 50% 36% / 20% 7%,
+    
+    radial-gradient(circle at 50% 84%, var(--color) 26%, #0000 0) no-repeat 50% -100% / 70% 70%,
+    radial-gradient(circle at 50% 50%, var(--color) 35%, #0000 0) no-repeat 50% 40% / 20% 20%,
+    radial-gradient(circle at 50% 50%, var(--color) 30%, #0000 0) no-repeat 63% 38% / 20% 20%,
+    radial-gradient(circle at 50% 50%, var(--color) 35%, #0000 0) no-repeat 32% 37% / 20% 20%,
+    radial-gradient(circle at 50% 50%, var(--color) 24%, #0000 0) no-repeat 40% 40% / 20% 20%,
+    radial-gradient(circle at 50% 50%, var(--color) 35%, #0000 0) no-repeat 70% 37% / 20% 20%,
+    
+    radial-gradient(circle at 50% 84%, #f69 26%, #0000 0) no-repeat 50% -100% / 70% 70%,
+    conic-gradient(at 50% 100%, #eb8 20deg, #0000 0 340deg, #eb8 0) no-repeat 50% 50% / 7vmin 50%;
+  background-color: #ddd;
+  position: absolute;
+  transform: rotateY(90deg) translate3d(-20vmin, 20vmin, -6.01vmin);
+}
+
+.wall .paint {
+  --color: hsl(var(--h), var(--s), var(--l));
+  --color: #d2c8c7;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: translateZ(-2vmin);
+  transform: translateZ(-2.1vmin);
+  background: red;
+  background:
+    linear-gradient(to right, #0000 50%, var(--color) 0) 0 0 / 100% 20vmin,
+    linear-gradient(to right, var(--color) 4vmin, #0000 0 33vmin, var(--color) 0 40vmin, #0000 0 65vmin, var(--color) 0),
+    linear-gradient(var(--color) 20%, #0000 0)
+    ;
+  background-repeat: no-repeat;
+}
+
+.paint + .paint {
+  transform: translateZ(2.1vmin);
+}
+
+.clock {
+  width: 10vmin;
+  height: 10vmin;
+  transform: translate3d(48vmin, 6vmin, -2.15vmin);
+  border-radius: 50%;
+  box-shadow: inset 0 0 0 1.25vmin #444;
+  
+  background-color: white;
+  transform-style: preserve-3d;
+}
+
+.clock::before,
+.clock::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 50%;
+  width: 100%;
+  height: 100%;
+  box-shadow: inset 0 0 0 1.25vmin #444;
+  transform: translateZ(-0.2vmin);
+  background:
+    linear-gradient(black 0 0) 50% calc(50% - 0.75vmin) / 0.75vmin 3vmin,
+    linear-gradient(45deg, #0000 0 45%, black 0 55%, #0000 0) 40% calc(50% - 0.75vmin) / 3vmin 3vmin
+  ;
+  background-repeat: no-repeat;
+}
+
+.clock::after {
+  transform: translateZ(-0.4vmin);
+}
+
+.clock > div {
+  background: #444;
+  width:0.5vmin;
+  height: 50%;
+  right: 2vmin;
+  transform: rotateY(90deg) rotateX(45deg);
+}
+
+.clock > div::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transform: rotateX(90deg) translate3d(0vmin, -2vmin, -1vmin) ;
+  transform-origin: 50% 100%;
+  top: 0;
+  left: 0;
+  background: #444;
+}
+
+.clock > div::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 70%;
+  position: absolute;
+  transform: rotateX(-45deg) translateZ(-2vmin);
+  top: 100%;
+  left: 0;
+  background: #444;
+}
+
+.floor {
+  --d: 80vmin;
+  --t: 80vmin;
+  --s: 10%;
+  --l: 80%;
+  width: 100%;
+  height: 4vmin;
+  bottom: 0;
+  left: 0;
+}
+
+.floor > div::before {
+  background:
+    
+    linear-gradient(#0000 2vmin, #0000 0),
+    repeating-linear-gradient(45deg, #0000 0 6%, #0001 0 6.25%),
+    repeating-linear-gradient(-45deg, #0000 0 6%, #0001 0 6.25%),
+    linear-gradient(#0000 2vmin, #fca 0)
+}
+
+.shade {
+  left: -1%;
+  width: 100%;
+  height: 45%;
+  background: red;
+  transform: rotateX(55deg);
+  transform-origin: 50% 0;
+  background: 
+    linear-gradient(#0000, #0001),
+    repeating-linear-gradient(to right, #d00 0 6.25%, #f8f8f8 0 12.5%);
+}
+
+.shade::before {
+  content: "";
+  display:block;
+  position: absolute;
+  width: 100%;
+  height: 15%;
+  top: 100%;
+  left: 0;
+  transform: rotateX(-55deg);
+  transform-origin: 50% 0;
+  background:
+    radial-gradient(50% 120% at 25% 0, #d00 50%, #0000 0) 0 0 / 12.5% 100%,
+    radial-gradient(50% 120% at 75% 0, #f8f8f8 50%, #0000 0) 0 0 / 12.5% 100%
+}
+
+.shade::after {
+  content: "";
+  display:block;
+  position: absolute;
+  width: 100%;
+  height: 3%;
+  top: 100%;
+  left: 0;
+  transform: rotateX(-25deg) translate(0, -50%);
+  transform-origin: 50% 0;
+  background: 
+    linear-gradient(#0003, #0000, #0002),
+    repeating-linear-gradient(to right, #d00 0 6.25%, #f8f8f8 0 12.5%);
+}
+
+.bar {
+  width: 1vmin;
+  height: 90%;
+  bottom: 0;
+  background: #222;
+  transform: rotateX(55deg);
+  transform-origin: 50% 100%;
+}
+
+.bar + .bar {
+  right: 0;
+}
+
+.bar::before,
+.bar::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: -1%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #222;
+  transform: rotateY(60deg);
+}
+
+.bar::after {
+  transform: rotateY(120deg);
+}
+
+
+.table {
+  width: 25vmin;
+  height: 25vmin;
+  abackground: #f003;
+  transform: translate3d(40vmin, 30vmin, -50vmin) rotateX(90deg);
+  transform-origin: bottom center;
+  transform-style: preserve-3d;
+}
+
+.table .board,
+.table .board::before,
+.table .board::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #eee;
+  border-radius: 50%;
+  transform-style: preserve-3d;
+}
+
+.table .board::before {
+  transform: translateZ(-0.15vmin);
+  background: #ddd;
+}
+
+.table .board::after {
+  transform: translateZ(-0.3vmin);
+}
+
+.table .board + .board {
+  transform: translateZ(-0.45vmin);
+  background: #ddd;
+}
+
+.table .board + .board  + .board {
+  transform: translateZ(-0.9vmin);
+}
+
+
+.table .board-depth {
+  width: 1.2vmin;
+  height: 100%;
+  background: #ddd;
+  left: 50%;
+  top: 0;
+  transform-origin: 0% 50%;
+  transform: rotateY(90deg);
+}
+
+.table .board-depth::before,
+.table .board-depth::after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #ddd;
+  transform: rotateX(60deg)
+}
+
+.table .board-depth::after {
+  transform: rotateX(-60deg)
+}
+
+.table .pole {
+  --h: 0deg;
+  --s: 0%;
+  --d: 1vmin;
+  height: 16vmin;
+  width: 1vmin;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: rotateX(-90deg) translate(-50%, 0%);
+  transform-origin: top center;
+}
+
+.table .shadow {
+  width: 100%;
+  height: 100%;
+  background: #0002;
+  border-radius: 50%;
+  filter: blur(2vmin);
+  transform: translateZ(-16vmin);
+}
+
+.table .base {
+  width: 50%;
+  height: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate3d(-50%, -50%, -16vmin);
+  background: #666;
+  border-radius: 50%;
+}
+
+.table .base::before, 
+.table .base::after {
+  content: ""; 
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #777;
+  transform: translateZ(0.15vmin);
+  border-radius: 50%;
+}
+
+.table .base::after {
+  background: #575757;
+  transform: translateZ(0.3vmin);
+}
+
+
+.chair {
+  width: 9vmin;
+  height: 9vmin;
+  transform: translate3d(55vmin, 62vmin, -69vmin) rotateX(90deg) rotate(50deg);
+  transform-origin: bottom center;
+  transform-style: preserve-3d;
+}
+
+.chair .shadow {
+  width: 120%;
+  height: 120%;
+  top: -10%;
+  left: -10%;
+  background: #0002;
+  filter: blur(2vmin);
+}
+
+.chair .leg {
+  --h: 30deg;
+  --s: 70%;
+  --l: 63%;
+  --d: 1vmin;
+  top: -1vmin;
+  width: 1vmin;
+  height: 9vmin;
+  transform: rotateX(-90deg);
+  transform-origin: 50% 100%;
+}
+
+.chair .leg-2 {
+  right: 0%;
+}
+
+.chair .leg-3 {
+  right: 0;
+  top: auto;
+  bottom: 100.75%;
+  height: 20vmin;
+}
+
+.chair .leg-4 {
+  left: 0;
+  top: auto;
+  bottom: 100.75%;
+  height: 20vmin;
+}
+
+.chair .seat {
+  --d: 1vmin;
+  --t: -8vmin;
+  width: 100%;
+  height: 100%;
+}
+
+.chair .back {
+  --h: 30deg;
+  --s: 70%;
+  --l: 63%;
+  --d: 0.5vmin;
+  bottom: 99%;
+  width: 100%;
+  height: 1vmin;
+  transform: rotateX(-90deg) translateY(-16vmin);
+  transform-origin: 50% 100%;
+}
+
+.chair .back + .back {
+  transform: rotateX(-90deg) translateY(-18.5vmin);
+}
+
+.desk {
+  --s: 0%;
+  --l: 75%;
+  --d: 45vmin;
+  --t: 50vmin;
+  left: -2.5vmin;
+  width: 15vmin; 
+  height: 13vmin;
+  transform: translate3d(20vmin, 59vmin, -48vmin);
+  box-shadow: inset 0 4vmin 4vmin -2vmin #0002;
+}
+
+.desk::before {
+  box-shadow: inset 0 4vmin 4vmin -2vmin #0003;
+  background:
+    radial-gradient(at 55% 50%, #0003 1vmin, #0000 0),
+    radial-gradient(at 40% 50%, #0003 1vmin, #0000 0),
+    linear-gradient(to right, #0000 21vmin, #0003 0 22vmin, #0000 0)
+    ;
+  background-repeat: no-repeat;
+  background-color: #999;
+}
+
+.counter-top {
+  --s: 0%;
+  --l: 100%;
+  --d: 25vmin;
+  --t: 50vmin;
+  left: -2.5vmin;
+  width: 17vmin; 
+  height: 2vmin;
+  transform: translate3d(19vmin, 57vmin, -49vmin);
+}
+
+.display-top {
+  --s: 0%;
+  --l: 100%;
+  --d: 21vmin;
+  --t: 50vmin;
+  left: -2.5vmin;
+  width: 17vmin; 
+  height: 2vmin;
+  transform: translate3d(19vmin, 57vmin, -24vmin);
+}
+
+.display-top > div::before {
+  background: #0000;
+}
+
+.display-top > div::after {
+  background: 
+    linear-gradient(#666 5%, #0000 0 32%, #666 0 37%, #0000 0 64%,  #666 0 69%, #0000 0 95%, #666 0),
+    linear-gradient(to right, #666 5%, #0000 0 47.5%, #666 0 52.5%, #0000 0 95%, #666 0),
+    radial-gradient(at 100% 0, #0003, #0000),
+    radial-gradient(#fff4, #fff0),
+    linear-gradient(#ee8 33%, #9d6 0 66%, #963 0) 0 0 / 50% 100%,
+    linear-gradient(#faa 33%, #eee 0 66%, #7dd 0) 100% 0 / 50% 100%
+    ;
+  background-repeat: no-repeat;
+}
+
+.display {
+  width: 17vmin;
+  height: 17vmin;
+  transform: translate3d(16.5vmin, 40vmin, -24vmin);
+  transform-style: preserve-3d;
+  background:
+    linear-gradient(to right, #f8f8f8 1vmin, #0000 0),
+    linear-gradient(75deg, #cdf6 75%, #ddd 0 78%, #0000 0)
+    
+    ;
+}
+
+.display::before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transform: translateZ(21vmin);
+  background:
+    linear-gradient(to right, #f8f8f8 1vmin, #0000 0),
+    linear-gradient(75deg, #cdf5 75%, #ddd 0 78%, #0000 0)
+    ;
+}
+
+.display::after {
+  content: "";
+  display: block;
+  position: absolute;
+  height: 100%;
+  width: 21vmin;
+  transform: rotateY(90deg) rotateX(15deg) translate3d(-21vmin, 4.5vmin, 14vmin);
+  transform-origin: 0% 50%;
+  background: linear-gradient(#ccc 1vmin, #0000 0 calc(100% - 1vmin), #ccc 0),
+    linear-gradient(to right, #ccc 1vmin, #0000 0 calc(100% - 1vmin), #ccc 0),
+    linear-gradient(#cdf4 0 0)
+}
+
+.display-glass-top {
+  --s: 0%;
+  --l: 100%;
+  --d: 21vmin;
+  --t: 50vmin;
+  left: -2.5vmin;
+  width: 12vmin; 
+  height: 1vmin;
+  transform: translate3d(19vmin, 40vmin, -24vmin);
+}
+
+/***/
+
+#youtube {
+  z-index: 2;
+  display: block;
+  width: 100px;
+  height: 70px;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: red;
+  border-radius: 50% / 11%;
+  transition: transform 0.5s;
+}
+
+#youtube:hover,
+#youtube:focus {
+  transform: scale(1.1);
+}
+
+#youtube::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 7.5%;
+  left: -6%;
+  width: 112%;
+  height: 85%;
+  background: red;
+  border-radius: 9% / 50%;
+}
+
+#youtube::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 20px;
+  left: 40px;
+  width: 45px;
+  height: 30px;
+  border: 15px solid transparent;
+  box-sizing: border-box;
+  border-left: 30px solid white;
+}
+
+#youtube span {
+  font-size: 0;
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
+
+</style>
+</head>
+<body>
+
+  <div class="canvas">
+  
+    <div class="floor cube"><div></div></div>
+    
+    <div class="wall">
+      <div class="cube"><div></div></div>
+      <div class="cube"><div></div></div>
+      <div class="cube"><div></div></div>
+      <div class="cube"><div></div></div>
+      <div class="cube"><div></div></div>
+      <div class="cube"><div></div></div>
+      <div class="cube"><div></div>
+        <span class="poster-2">قلقيلية/فلسطين<br/>طبق<br/>كي<br/>تستفيد<br/></span>
+        <span class="no-posters">لا<br><br><br><br><br>للتسويف</span>
+        <span class="poster-1">لا<br><br><br><br><br>للتأجيل</span>
+        <span class="ice-cream">والبقية عليك</span>
+        <span class="poster">نشير إليها</span>
+      </div>
+      <div class="paint"></div>
+      <div class="paint"></div>
+      <div class="clock">
+        <div></div>
+      </div>
+    </div>
+    
+    <div class="cube step"><div></div></div>
+    
+    <div class="door">
+      <div class="cube door-board">
+        <div></div>
+        <span class="cube handle"><div></div></span>
+        <span class="cube neck"><div></div></span>
+      </div>
+      <div class="cube frame-top"><div></div></div>
+      <div class="cube frame-side"><div></div></div>
+      <div class="cube frame-side"><div></div></div>
+    </div>
+    
+    <div class="window">
+      <div class="cube frame-top"><div></div></div>
+      <div class="cube frame-top"><div></div></div>
+      <div class="cube frame-side"><div></div></div>
+      <div class="cube frame-side"><div></div></div>
+    </div>
+    
+    <div class="shade">
+      <div class="bar"></div>
+      <div class="bar"></div>
+    </div>
+    
+    <div class="table">
+      <div class="shadow"></div>
+      <div class="base"></div>
+      <div class="board-depth"></div>
+      <div class="board"></div>
+      <div class="board"></div>
+      <div class="board"></div>
+      <div class="pole cube"><div></div></div>
+    </div>
+    
+    <div class="chair">
+      <div class="shadow"></div>
+      <div class="seat cube"><div></div></div>
+      <div class="leg leg-1 cube"><div></div></div>
+      <div class="leg leg-2 cube"><div></div></div>
+      <div class="leg leg-3 cube"><div></div></div>
+      <div class="leg leg-4 cube"><div></div></div>
+      <div class="back cube"><div></div></div>
+      <div class="back cube"><div></div></div>
+    </div>
+    
+    <div class="counter">
+      <div class="desk cube"><div></div></div>
+      <div class="display-top cube"><div></div></div>
+      <div class="counter-top cube"><div></div></div>
+      <div class="display"></div>
+      <div class="display-glass-top cube"><div></div></div>
+    </div>
+  </div>
+  
+</body>
+</html>
